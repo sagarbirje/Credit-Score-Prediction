@@ -1,0 +1,605 @@
+---
+title: "HW3 - Cluster Analysis and Regression Modeling"
+author: 'Sagar Birje'
+date: "10/16/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+This assignment/exam is focused on learning how to create and evaluate the performance of models.
+
+Here are the learning objectives: 
+
+* Apply cluster analysis to a business context.
+* Practice interpreting cluster results and qualitatively identifying the best model.
+* Apply multiple linear regression analysis to a business context.
+* Practice fitting and evaluating linear regression models.
+* Apply logistic regression analysis to a business context.
+* Practice fitting and evaluating logistic regression models.
+
+The process for the last four learning objectives are pretty much identical, you are just fitting a different kind of model (classification instead of regression).
+
+# Meet the Data
+You will be using data from [the "Give Me Some Credit" Kaggle competition](https://www.kaggle.com/c/GiveMeSomeCredit). For the clustering part, your objective is to group similar credit borrowers together, which will allow you to "profile" borrowers based on their "characteristics". For the linear regression part, your objective is to estimate a borrower's monthly income. For the logistic regression part, your objective is to predict whether a borrower will default. Note that predicting whether or not they will default (or be seriously delinquent) was the objective of the Kaggle contest.
+
+## Understand the Data
+
+We will be using a data set from the ["Give Me Some Credit" Kaggle competition](https://www.kaggle.com/c/GiveMeSomeCredit/data). Notice there is a ["Data Dictionary.xls"](https://www.kaggle.com/c/GiveMeSomeCredit/data?select=Data+Dictionary.xls) that describes the data columns.  Be sure to refer to that to understand the data.
+
+Then you might have to do some research on the terms.  For example:
+
+* Here is a nice explanation of [Revolving Utilization of Unsecured Lines](https://www.credit.com/blog/what-is-revolving-utilization/#:~:text=Revolving%20utilization%2C%20also%20known%20as,using%20at%20a%20given%20time.)
+* Here is a good resource to understand [Debt Ratio](https://www.investopedia.com/ask/answers/081214/whats-considered-be-good-debttoincome-dti-ratio.asp#:~:text=A%20debt%2Dto%2Dincome%20ratio,the%20money%20you%20have%20borrowed.)
+
+Here is the overview of the competition:
+
+>Banks play a crucial role in market economies. They decide who can get finance and on what terms and can make or break investment decisions. For markets and society to function, individuals and companies need access to credit. 
+
+>Credit scoring algorithms, which make a guess at the probability of default, are the method banks use to determine whether or not a loan should be granted. This competition requires participants to improve on the state of the art in credit scoring, by predicting the probability that somebody will experience financial distress in the next two years.
+
+The competition objective holds only for logistic regression. We will change the objective for clustering and linear regression. This leads us to understanding the differences between clustering, linear regression, and logistic regression.
+
+# Understanding the Different Types of Models
+You need to understand the difference between clustering, linear regression, and logistic regression. At a high level, clustering is an **unsupervised** algorithm, which means that the algorithm does not need to know "the answers" -- called the labels. Linear and logistic regression are **supervised** algorithms. They learn using the labels (answers) from historical data.
+
+## What is clustering? How does it work?
+In a nutshell, a cluster analysis groups similar observations together. How? Based on their characteristics. Example of student characteristics that would be helpful in clustering are age, degree, GPA, gender, courses taken. These would appear in a data set as columns (i.e., variables).
+
+This assignment uses a specific clustering algorithm called [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering). The best way to understand k-means clustering is to watch it in action. Take a look at [this video](https://www.youtube.com/watch?v=BVFG7fd1H30). 
+
+You can also "slow it down" with the interactive visualizations [here](http://www.onmyphd.com/?p=k-means.clustering). Just click "Reset", choose the number of clusters (think "groups"), then click "Iterate" button to step through iterations of the algorithm.
+
+In both demos, notice that *k* is the number of clusters (think "groups"). Notice that the original data points *never* move. It is the *centroids* (think "centers") of the clusters that move. 
+
+You can find another good explanation of clustering in [*Data Smart, Chapter 2*](https://ebookcentral.proquest.com/lib/niu/detail.action?docID=1527439). 
+
+## What is linear regression?
+Linear regression is used to estimate or predict a **continuous** target variable. (Remember that clustering has no target variable!) It can use both continuous and categorical predictor variables to estimate the target variable.
+
+## What is logistic regression?
+Logistic regression is misnamed.  Regression implies estimating a continuous variable, but logistic regression--in it's most used form--is a binary classification model.  That means it predicts whether something is true or false, yes or no, this or that.
+
+## Your target variable is dictated by your model type and vice versa
+So, right out of the gate, you should pay attention to the target variables we use in each part:
+
+* Clustering --> no target variable
+* Linear regression --> monthly income (it's continuous)
+* Logistic regression --> serious delinquent in last two years (it's categorical--specifically binary, yes or no)
+
+# **Submission Requirements**
+Submit a knitted version of this RMD.  Knit to HTML and then save as PDF.
+
+Your code must execute and I must be able to see the results of your executed code.
+
+## Instructions to "knit" this file
+
+1) Open the .rmd file.
+2) Pull down on the "Knit" menu in the toolbar at the top of R Studio
+3) Select "Knit to HTML".
+
+![](images/knit.png)
+
+If R Studio wants to install a bunch of packages the first time you Knit it, let it. But all the packages should be installed on the server.
+
+I highly recommend you knit before you start -- just to make sure everything is working -- and then knit *frequently* as you go along. Pressing the knit button is the easy part. Getting your document to knit without errors is the hard part! Knitting frequently helps you narrow in on the location of any errors you introduce.
+
+# Part I -- Clustering
+
+We'll start by clustering the data to see if we can identify groups of borrowers that belong together. This can provide insight (and allow us to describe) the kinds of borrows we want to lend to.
+
+Even though `sparklyr`'s clustering capabilities are not very mature, we will still use them.
+
+Also, remember that clustering is an unsupervised learning algorithm. Therefore, we do *not* need a "test" set of data, *nor* do we need labels.
+
+## Step 0: Understanding, Importing, and Preparing the Data
+
+### Understand the Data
+Review the section in "Meet the Data" and make sure you understand the terms.  You'll need this understanding in all parts of this assignment.
+
+### Import the Data
+
+I've placed the data in the `/tmp/data/credit/` folder on this server. Notice that I've defined the filepath to the data in the code chunk below. 
+
+```{r}
+library(tidyverse)
+
+data_path <- "/tmp/data/credit/credit.csv"
+
+## load CSV files
+credit <- read_csv(data_path) 
+```
+
+### Prepare the Data
+
+Start by checking for NAs.
+
+> **TIP:** Here is how you can count the number of NAs in all the columns of an R data frame. Conveniently this same code will work on both an R and a Spark data frame.
+
+```{r}
+credit %>% summarize_all(~sum(as.integer(is.na(.))))
+```
+
+Yes, we'll remove NAs for this assignment. But note that removing rows with NAs is not the only option.  *What are other options exist?*  
+
+```{r}
+# Remove NAs.  
+
+credit <- credit %>% 
+  na.omit()
+
+```
+
+Notice that there is an *X1* column that contains the row number. We do not need that, so go ahead and remove it. 
+
+```{r}
+#### here's an example of how to remove a column
+# df <- df %>% select(-[variable name])
+
+credit <- credit %>% select(-X1)
+credit
+
+```
+
+### Scale the Data
+For clustering purposes, it is _**really**_ important to normalize the data. Otherwise, variables that have larger ranges (think "max - min") will have more leverage in the kmeans algorithm. In other words, they will dominate the clustering. There are a couple of options here. We could convert all the numbers in to z-scores (like standardized scores), but instead, it'll be easier to interpret the clusters if we convert them all to a 0 to 1 scale.  So, we'll "standardize" them using this formula:
+
+$$x_{std}=\frac{x-x_{min}}{x_{max}-x_{min}}$$ 
+
+where $x_{std}$ is the standardized value of $x$ (the original value)...and, you can figure out the rest of the variables in the formula.
+
+So, to standardize the data, first create a function to standardize a single number (on a scale of 0 to 1). Then we'll use `mutate_all` to "apply" that function to all the columns.  Here's the pattern.
+
+```{r}
+standardize <- function(x) {
+  (x - min(x)) / (max(x)-min(x))
+}
+
+# standardize the training data 
+credit <- credit %>% mutate_all(standardize)
+credit
+
+```
+
+Now, use the `write_csv {readr}` function write the data to a CSV file named something like *scaled_credit.csv*. Then we'll load it into the Spark environment.
+
+```{r}
+  write_csv(credit,"scaled_credit.csv")
+```
+
+Now read it scaled data into the Spark environment with `spark_read_csv()`. Store it into `scaled_credit`. To get `spark_read_csv()` to get the data types correct, read a few lines in with `read_csv() {readr}` to capture the schema and then pass that schema to `spark_read_csv()`, like this:
+
+```{r}
+library(sparklyr)
+
+# make sure you don't have a stale connection opened.
+spark_disconnect_all() 
+
+sc <- spark_connect(master = "local")
+
+credit_schema <- sapply(read_csv("scaled_credit.csv", n_max = 10), class)
+
+## next call spark_read_csv() using the train_schema
+scaled_credit <- spark_read_csv(sc, "scaled_credit.csv", columns = credit_schema)
+```
+
+Now, you ought to do a quick sanity check and make sure your *scaled_credit* data is actually standardized to a 0 to 1 scale. Look inside the Spark data frame and make sure each columns looks like it ranges from 0 to 1.
+```{r}
+scaled_credit
+```
+
+Now, before you cluster the cluster the data, you can remove the target variable *SeriousDlquin2yrs*.  Remember that clustering is an unsupervised algorithm, so we don't need (even want) the labels. Remember how you removed *X1*, do the same thing here for *SeriousDlquin2yrs*.
+
+```{r}
+    scaled_credit <- scaled_credit %>% select(-SeriousDlqin2yrs)
+    scaled_credit
+```
+
+Now, finally, it's time to cluster. 
+
+Since `sparklyr`'s clustering reporting and evaluation capabilities is very minimal--focus on qualitatively evaluating your clusters. That is, focus on looking at the cluster centers and interpreting each cluster in words (English). 
+
+**REQUIREMENT:**
+Your job is to fit 3-, 4-, 5- models to the data and see how well you can interpret each cluster.  
+
+
+I'll demo a 7-cluster model to show you how.
+
+First, we fit the cluster model.
+```{r}
+km7 <- scaled_credit %>% ml_kmeans(~., k=7, init_steps = 5)
+
+```
+
+The first sanity check is looking at the size of each clusters. If we had a cluster or two with only one or two members, it's probably a garbage cluster. Think about it!  A cluster of one or two is not very helpful since the point of clustering is to find observations that are similar--or to group observations that are similar.
+
+```{r}
+# try ml_summary(km7) and see the helpful output.  From that output, we know to try this to get cluster sizes:
+ml_summary(km7)$cluster_sizes()
+
+```
+
+The smallest cluster has 11245 observations.  That's plenty big to be useful.  So no worries here.
+
+Next we want to look at and interpret the cluster centers. We can display the centers with `km7`, like this:
+
+```{r}
+km7
+```
+
+Notice there are 7 rows--one for each cluster (group). Each center has 10 points (i.e., we are working in a 10-dimensional space -- RevolvingUtilizationOfUnsecuredLines, age, NumberOfTime3059DaysPastDueNotWorse, etc.). So, let's interpret the clusters--that is describe each cluster in English. How do we do this? 
+
+Let's use *age* as an example. Which cluster is the oldest? youngest? 
+
+Cluster 4 (4th row) is the oldest cluster. 
+Cluster 7 (7th row) is the youngest cluster. 
+
+Look at monthly income. Which cluster has the highest income? lowest? 
+
+Cluster 3 has the highest income.
+Cluster 7 has the lowest income.
+
+So, do you see how cluster 7 has the lowest income and is the youngest. Notice that cluster 7 also has the lowest debt ratio and the least number of open credit lines. Its number of real estate lines (think mortgages) is also the lowest--so its members probably rent homes or apartments. But they also seem to be the most often late on their loan payments (30, 60, AND 90+ days late). Their credit utilization is high, so they probably keep a higher balance on the credit card(s) they have (which seem to be few--look at NumberOfOpenCreditLinesAndLoans). So, cluster 7 is starting to get a profile.  Let's describe them.
+
+> Cluster 7 - young, low income, low-debt, renters, high credit card balance, and likely to be diliquent.
+
+Would you want to loan to this group? - no
+
+Do you get the idea of how to profile? 
+
+Let's just drive it home by revisiting cluster 3. Here's how I would describe them.
+
+> Cluster 3 - older, low credit balance, high income, home-owners, families, pay on-time
+
+What about the other clusters? Can you find the "retired" (older, low-income) cluster? Are the other clusters distinct from each other? or do some overlap and blur together? If the cluster is not unique or distinct or it is hard to identify it's characteristics (because all the dimensions are average) then it could be a "garbage" cluster. If there are garbage clusters then maybe the data is better fit to a lower or higher number of clusters.  More than 6 or 7 clusters tends to be difficult for humans to keep track of, so higher number of clusters tend to be less useful.
+
+Now you take it from here.
+
+**REQUIREMENTS:**
+
+1) Fit 3-, 4-, and 5-cluster k-means models.
+
+2) Determine (qualitatively--that is by profiling them with the cluster centers) which number of clusters best fits the data. In other words, which of the models have the best, most descriptive groups.
+
+3) For the best fitting model (and only for that one model), write an English description of each cluster.  So, for instance, if you decide that a 3-cluster model fits best, you need three profile descriptions--one for each cluster.
+
+Show your work in this code chunk. Don't sweat this too much.  Just practice interpreting in this qualitative way.
+
+```{r}
+## Show your clustering fitting and exploration code here
+km3 <- scaled_credit %>% ml_kmeans(~., k=3, init_steps = 5)
+ml_summary(km3)$cluster_sizes()
+km3
+
+km4 <- scaled_credit %>% ml_kmeans(~., k=4, init_steps = 5)
+ml_summary(km4)$cluster_sizes()
+km4
+
+km5 <- scaled_credit %>% ml_kmeans(~., k=5, init_steps = 5)
+ml_summary(km5)$cluster_sizes()
+km5
+```
+
+**Place your cluster descriptions here.**
+
+CLUSTER 1 -- old, high income, very high credit card balance, home-owners, No family, Pay on time, average-debt
+
+CLUSTER 2 -- young, lowest income, low credit card balance, most likely to delinquent, Renters, low-debt
+
+CLUSTER 3 -- Middle-aged, high income, high debt, high credit balance, Family, Pay on time, Owners
+
+...[ADD MORE IF YOU NEED TO]
+
+**TIP**
+
+Sometimes, you might find it easier to read them if they were transposed so every column is a cluster center. 
+
+To transpose it, we'll reach inside the `km7` object and get the *centers* table then with a little `tidyr` trickery, transpose it:
+
+```{r}
+# call names() to find the centers table
+names(km7)
+
+km7centers <- km7$centers %>%
+  rownames_to_column %>%
+  gather(variable, value,-rowname) %>%
+  spread(rowname, value)
+
+km7centers
+```
+
+# Multiple Linear Regression--Estimate Monthly Income (Spark)
+
+Now let's move on to multiple linear regression.  The Kaggle competition was originally all about logistic regression (or other classification methods)--notice how the original target variable (*SeriousDlquin2yrs*) is binary, zero or one.  That smells of logistic regression!  
+
+But, let's do some multiple linear regression in Spark before logistic regression. In order to do that, we need to choose an appropriate (continuous!) target variable. How about *Monthly Income*? Let's see if we can predict monthly income with all the other borrower characteristics.
+
+You don't want / need the data to be standardized for regression, so you will **use the original credit data** for this part. 
+
+And remember, in general, the model creation process is as follows:
+
+1) Load the data (into Spark)
+2) Prepare the data
+3) Partition the data into training and test sets
+4) Fit the model(s)
+5) Evaluate and compare the models
+
+**REQUIREMENTS:** Your goal in this part of the assignment is to create the best possible model with the credit data as possible. By "best", I mean **the most accurate at estimating monthly income in the test set.**
+
+Here are some rules you need to abide by:
+
+* use a 70/30--that is, split your data into training (70%) and test (30%) data sets 
+* use a seed of 1234 when you split your data
+* only use the credit data provided--do not join in any other outside data
+
+So, let's get you started.
+
+### Load the Data into Spark
+```{r}
+## obtain the column schema with read_csv and sapply()
+credit_schema <- sapply(data_path,read_csv)
+
+## next call spark_read_csv() using the train_schema
+credit <- spark_read_csv(sc,data_path)
+```
+
+
+### Prepare the data
+Yes, this is where you remove that annoying *X1* column and all the observations with NAs. But wait there is more!
+
+Let's talk about [**feature engineering**](https://en.wikipedia.org/wiki/Feature_engineering#:~:text=Feature%20engineering%20is%20the%20process,as%20applied%20machine%20learning%20itself.)
+
+#### Feature Engineering (**IMPORTANT**)
+
+Many of the Kaggle champions spend most of their time engineering features--in other words, they focus on deriving additional information from the existing data.  Often this is **the most important** step in creating a predictive model--maximize the amount of information in the data.  
+
+I want you to get creative on engineering features. Brainstorm. Start discussions on Piazza. Talk to friends. Read up on the Internet about loan applications and what the different variables (i.e., revolving unsecured credit utilization). 
+
+So, what is feature engineering? Here is an example:
+
+Since there are three "number of days past due" columns in the data, we could combine them into one variable that captures a sense of the "total number of days past due" in their history.  Since the columns are bucketed into 30 to 59, 60 to 89, and 90+, let's just take the number of days past due in the bucket and multiply it by the number of days in that bucket.  Like this:
+
+```{r}
+credit %>% mutate(
+  totalPastDue = 
+    NumberOfTime3059DaysPastDueNotWorse * 45 + 
+    NumberOfTime6089DaysPastDueNotWorse * 75 + 
+    NumberOfTimes90DaysLate * 105,
+)
+```
+
+As another example, we could "back into" (reverse engineer) a rough estimate of the borrowers total debt (which would include alimony and living expenses), like this:
+
+```{r}
+credit %>% 
+  mutate(totalDebt = DebtRatio * MonthlyIncome)
+```
+
+**But wait!** That last feature has a problem--[feature leakage](https://en.wikipedia.org/wiki/Leakage_(machine_learning)#Feature_leakage). In short, since we are trying to estimate *MonthlyIncome*, we have to ensure that none of the monthly income "information" is used as a predictor. By multiplying debt ratio by monthly income, we are injecting some information about monthly income into the "totalDebt" feature.  "But wait!", you say, "Doesn't debt ratio already have monthly income information in it? It is calculated by total debt / income!" Well, you would be correct.  And that highlights how complicated it can be to create a valid model. In this exercise, don't worry too much about leakage--just avoid any blatant leakage like including *MonthlyIncome* as a predictor of *MonthlyIncome* or including some derived feature that has *MonthlyIncome* as part of the calculation like the above *totalDebt* calculation.
+
+So spend some time creating new features from the existing credit data columns. Be sure to add your new features to the credit data with code like this `df <- df %>% mutate(colname1 = calculation, colname2 = calculation, ...)`
+
+**REMEMBER!** Post on Piazza! Get ideas! Talk to people! Expand your mind! Think outside the box! And watch out for feature leakage! :-)
+
+
+```{r}
+credit %>% summarize_all(~sum(as.integer(is.na(.))))
+
+
+credit <- credit %>% 
+  filter(!is.na(MonthlyIncome), !is.na(NumberOfDependents)) %>% 
+  ___ %>% 
+  ___
+  ...
+
+
+## add additional feature engineering code as part of the above dplyr statement,
+## mutate will be one of your favorite functions here.
+
+```
+
+### Partition the Credit Data into Train and Test Sets
+
+Normally, after feature generation, you'd partitation the data.  And, yes, you still have to do do that with code like this:
+
+```{r}
+# transform our data set, and then partition into 'training', 'test'
+partitions <- credit %>%
+  sdf_random_split(___, ___, ___)
+
+train <- partitions$training
+test <- partitions$test
+```
+
+Remember to use seed = 1234 and do a 70/30 split! Also remember to set aside your *test* set.  Don't touch it or look at it until you evaluate your model.
+
+But...as you'll see in the next section, we are going to roll partitioning into a template that you'll use to complete this assignment.  
+
+Keep reading.
+
+### Model Fitting and Evaluating
+
+Now, we are going to put all the steps together into a pipeline.  This is actually a really important feature of Spark and other machine learning libraries. When you get ready to put a model into "production" (think "live"), any new data you feed through the model has to be transformed and look just like the data you trained the model on. So, pipeline's become very convenient. I'll show you how to create a pipeline to complete all steps of the process, then provide you with a complete template that you can tweak it and try different features to figure out how to maximize the accuracy of your model in predicting the monthly income in the test set.
+
+You can find more information about [sparklyr pipelines here](https://spark.rstudio.com/guides/pipelines/).
+
+Here's the template you will use.  Here I'm creating the "full" model based on the original features in the original credit data.  By "full" model, we just mean the model will all available features. This does not include interactions (but could, so be sure you understand what a person means when they say "full model").
+
+```{r}
+
+## create a dplyr template for the necessary data cleaning
+## this template will be passed to the ft_dplyr_transformer() function below,
+## think of the ft_dplyr_transformer() layer of the pipeline as a way for you to
+## define the data cleaning and transformation (done in dplyr) that needs to be 
+## performed before you partition and start modeling
+
+## TO DO: Add your feature engineering code to this dplyr code
+## You want to generate the same features in the test data as 
+## you do in the training data
+df <- credit %>% 
+  filter(!is.na(MonthlyIncome), !is.na(NumberOfDependents)) %>%   # remove NAs
+  select(-X1, -SeriousDlqin2yrs)  # remove unneeded columns
+
+## create the pipeline--this includes everything from preparing the data to 
+## defining (not fitting) the model.
+## Important! This creates an "empty pipe" -- there is not data in it
+credit_pipeline <- ml_pipeline(sc) %>%  # create an empty pipeline
+  ft_dplyr_transformer(tbl = df) %>%    # apply the dplyr code above
+  ft_r_formula(MonthlyIncome ~ .) %>%   # specify formula to include all variables as predictors (.)
+  ml_linear_regression()
+
+## split the data into train and test sets.  We'll fit the model with the train,
+## and predict with the test
+partitioned_credit <- credit %>%
+  sdf_random_split(training = 0.7, test = 0.3, seed = 1234)
+
+## now feed data into the pipe that will "fit" a model to the data.
+## think of it as "filling" the pipeline with data, as it flows thru
+## the pipeline, the pipeline applies each of the stages (ft_dplyr_transformer,
+## ft_r_formula, ml_linear_regression) to the data and spits out a "PipelineModel"
+fitted_credit_pipeline <- ml_fit(
+  credit_pipeline,                       ## tell it what pipeline to put the data through
+  partitioned_credit$training            ## tell it what data to fill the pipe with
+)
+
+## NOTE: fitted_credit_pipeline now contains an actual regression model!!!
+
+# evaluate it with the test data -- that is predict! 
+## except we call ml_transform that feeds the data through the pipeline first
+ml_transform(
+  fitted_credit_pipeline,
+  partitioned_credit$test      ## notice it's the test set, not the training set
+  ) %>%
+  ml_regression_evaluator()    ## then evaluate the predictions, defaults to RMSE
+
+```
+
+So, the final output of the `ml_regression_evaluator()` is the root means squared error (RMSE)--see the [help for `ml_regression_evaluator()`](https://spark.rstudio.com/reference/) and look at the default values. We want to reduce error, so your goal is to minimize the RMSE--in other words, more accurate models have lower RMSE values on the test data.
+
+### Your Linear Regression Model Creation and Evaluation Template
+
+If we remove the comments from and clean up the above code, here's a template that you can work with:
+```{r}
+## create dplyr transformation template
+## TODO: GENERATE FEATURES HERE
+df <- credit %>% 
+  filter(!is.na(MonthlyIncome), !is.na(NumberOfDependents)) %>%
+  select(-X1, -SeriousDlqin2yrs) 
+  ## add feature generation
+
+## partition (train, test)
+partitioned_credit <- credit %>%
+  sdf_random_split(training = 0.7, test = 0.3, seed = 1234)
+
+## change this formula to try different predictors in the model
+## TODO: TRY DIFFERENT PREDICTORS HERE
+formula <- "MonthlyIncome ~ ."
+
+## create pipeline (empty)
+credit_pipeline <- ml_pipeline(sc) %>%
+  ft_dplyr_transformer(tbl = df) %>%
+  ft_r_formula(formula) %>%
+  ml_linear_regression()
+
+## fit (with train data) and evaluate model (with test data)
+ml_fit(credit_pipeline, partitioned_credit$training) %>%
+  ml_transform(partitioned_credit$test) %>%
+  ml_regression_evaluator() 
+
+
+```
+### Your Requirements
+
+That's a lot to understand, huh? Let's simplify your task. Using the template code above, you can manipulate two things:
+
+1) Features--create new features with `mutate()` and other `dplyr` verbs. Be sure and append them as new columns in the *credit* data set. 
+2) Predictors--change the formula of the model--include/exclude different predictors, including the features you generated.
+
+Iterate on those two tasks and pay attention to the resulting RMSE--lower is better.
+
+Here are some things to consider:
+
+* Don't forget interactions between predictors. Remember the syntax for interactions?  Here's an example:
+  - `MonthlyIncome ~ age * DebtRatio` is the same thing as `MonthlyIncome ~ age + DebtRatio + age:DebtRatio`
+  - In other words, `+` only includes the "main effect", `:` only includes the interaction, and `*` includes both.
+* Stop and think. Theorize! Which do you think is more correlated with income -- age or number of times late on a payment? or what about debt ratio or number of dependents? (That one is harder.)
+* Understand the data and the terms / variables (i.e., revolving utilization of unsecured lines). Use Google.  Discuss it on Piazza.
+* Use a systematic approach--change one variable at a time.  For example, focus on new features while always fitting the full model. Minimize your RMSE by generating as many new features as you can.  THEN, as a next phase, stick with that set of features and evaluate different permutations of all those features--remove them one at a time.
+
+Show your work in at least one code chunks below.  Feel free to use more code chunks if you want.  Feel free to use hastags (#) to create different headers to section off the stages of your work like discussed above -- like a section for feature engineering and a section for different models that you fit.
+
+```{r}
+
+## show your work in one or more code chunks
+
+
+```
+
+## Record your lowest RMSE --> [replace with min RMSE]
+
+
+
+# Logistic Regression
+Tired yet? I know I am. But why stop at linear regression when logistic regression is practically the same process?  And it fits the original intent of the Kaggle competition.
+
+Don't panic.  This section is just like last section, except:
+
+1) the target variable is now *SeriousDlquin2yrs*
+2) you will use `ml_logistic_regression()` as the model type--hopefully that is self-explanatory
+3) you will use `ml_binary_classification_evaluator()`, this means:
+  - your metric of evaluation is not RMSE, but "area under the ROC curve"
+  - you want to **maximize** the area under the ROC curve, so *higher values are better models*
+
+
+Here's your template:
+```{r}
+## create dplyr transformation template
+## NOTICE!  You do NOT want to remove SeriousDlqin2yrs--that's your target variable
+## TODO: GENERATE FEATURES HERE
+df <- credit %>% 
+  filter(!is.na(MonthlyIncome), !is.na(NumberOfDependents)) %>%
+  select(-X1) 
+  ## add feature generation
+
+## partition (train, test)
+partitioned_credit <- credit %>%
+  sdf_random_split(training = 0.7, test = 0.3, seed = 1234)
+
+## change this formula to try different predictors in the model
+## TODO: TRY DIFFERENT PREDICTORS HERE
+formula <- "SeriousDlqin2yrs ~ ."
+
+## create pipeline (empty)
+credit_pipeline <- ml_pipeline(sc) %>%
+  ft_dplyr_transformer(tbl = df) %>%
+  ft_r_formula(formula) %>%
+  ml_logistic_regression()
+
+## fit (with train data) and evaluate model (with test data)
+ml_fit(credit_pipeline, partitioned_credit$training) %>%
+  ml_transform(partitioned_credit$test) %>%
+  ml_binary_classification_evaluator() 
+
+```
+
+
+Show your work in at least one code block below.  Feel free to use more if you want.  Feel free to use hastags (#) to create different sections of your work -- like a section for feature engineering and a section for different models that you fit.
+
+```{r}
+
+## show your work in one or more code chunks
+
+
+```
+
+## Record your highest area under the ROC curve value --> [replace with highest area under ROC]
+
+
+# Challenge
+
+If you are feel strong and want a good challenge take your model and feed the original Kaggle "test data" through it and submit it to the "Give Me Some Credit" competition and see how well you perform. You'll have to look at the competition details to understand the format the submission needs to be in.
+
+NOTE: This is not required for the assignment / exam.  Just helpful for bragging rights.

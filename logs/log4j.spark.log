@@ -1,0 +1,858 @@
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_database: default
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_database: default	
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_database: default
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_database: default	
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+20/11/03 16:19:25 INFO CodeGenerator: Code generated in 7.986165 ms
+20/11/03 16:19:25 INFO CodeGenerator: Code generated in 5.601092 ms
+20/11/03 16:19:25 INFO CodeGenerator: Code generated in 7.299292 ms
+20/11/03 16:19:25 INFO CodeGenerator: Code generated in 3.351349 ms
+20/11/03 16:19:25 INFO SparkContext: Starting job: count at utils.scala:114
+20/11/03 16:19:25 INFO DAGScheduler: Registering RDD 2907 (count at utils.scala:114) as input to shuffle 208
+20/11/03 16:19:25 INFO DAGScheduler: Got job 578 (count at utils.scala:114) with 1 output partitions
+20/11/03 16:19:25 INFO DAGScheduler: Final stage: ResultStage 816 (count at utils.scala:114)
+20/11/03 16:19:25 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 815)
+20/11/03 16:19:25 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 815)
+20/11/03 16:19:25 INFO DAGScheduler: Submitting ShuffleMapStage 815 (MapPartitionsRDD[2907] at count at utils.scala:114), which has no missing parents
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1090 stored as values in memory (estimated size 10.1 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1090_piece0 stored as bytes in memory (estimated size 5.3 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO BlockManagerInfo: Added broadcast_1090_piece0 in memory on localhost:39669 (size: 5.3 KiB, free: 963.0 MiB)
+20/11/03 16:19:25 INFO SparkContext: Created broadcast 1090 from broadcast at DAGScheduler.scala:1200
+20/11/03 16:19:25 INFO DAGScheduler: Submitting 96 missing tasks from ShuffleMapStage 815 (MapPartitionsRDD[2907] at count at utils.scala:114) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Adding task set 815.0 with 96 tasks
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 0.0 in stage 815.0 (TID 2834, localhost, executor driver, partition 0, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 1.0 in stage 815.0 (TID 2835, localhost, executor driver, partition 1, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 2.0 in stage 815.0 (TID 2836, localhost, executor driver, partition 2, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 3.0 in stage 815.0 (TID 2837, localhost, executor driver, partition 3, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 4.0 in stage 815.0 (TID 2838, localhost, executor driver, partition 4, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 5.0 in stage 815.0 (TID 2839, localhost, executor driver, partition 5, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 6.0 in stage 815.0 (TID 2840, localhost, executor driver, partition 6, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 7.0 in stage 815.0 (TID 2841, localhost, executor driver, partition 7, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 8.0 in stage 815.0 (TID 2842, localhost, executor driver, partition 8, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 9.0 in stage 815.0 (TID 2843, localhost, executor driver, partition 9, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 10.0 in stage 815.0 (TID 2844, localhost, executor driver, partition 10, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 11.0 in stage 815.0 (TID 2845, localhost, executor driver, partition 11, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 12.0 in stage 815.0 (TID 2846, localhost, executor driver, partition 12, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 13.0 in stage 815.0 (TID 2847, localhost, executor driver, partition 13, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 14.0 in stage 815.0 (TID 2848, localhost, executor driver, partition 14, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 15.0 in stage 815.0 (TID 2849, localhost, executor driver, partition 15, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 16.0 in stage 815.0 (TID 2850, localhost, executor driver, partition 16, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 17.0 in stage 815.0 (TID 2851, localhost, executor driver, partition 17, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 18.0 in stage 815.0 (TID 2852, localhost, executor driver, partition 18, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 19.0 in stage 815.0 (TID 2853, localhost, executor driver, partition 19, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 20.0 in stage 815.0 (TID 2854, localhost, executor driver, partition 20, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 21.0 in stage 815.0 (TID 2855, localhost, executor driver, partition 21, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 22.0 in stage 815.0 (TID 2856, localhost, executor driver, partition 22, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 23.0 in stage 815.0 (TID 2857, localhost, executor driver, partition 23, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 24.0 in stage 815.0 (TID 2858, localhost, executor driver, partition 24, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 25.0 in stage 815.0 (TID 2859, localhost, executor driver, partition 25, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 26.0 in stage 815.0 (TID 2860, localhost, executor driver, partition 26, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 27.0 in stage 815.0 (TID 2861, localhost, executor driver, partition 27, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 28.0 in stage 815.0 (TID 2862, localhost, executor driver, partition 28, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 29.0 in stage 815.0 (TID 2863, localhost, executor driver, partition 29, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 30.0 in stage 815.0 (TID 2864, localhost, executor driver, partition 30, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 31.0 in stage 815.0 (TID 2865, localhost, executor driver, partition 31, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 32.0 in stage 815.0 (TID 2866, localhost, executor driver, partition 32, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 33.0 in stage 815.0 (TID 2867, localhost, executor driver, partition 33, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 34.0 in stage 815.0 (TID 2868, localhost, executor driver, partition 34, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 35.0 in stage 815.0 (TID 2869, localhost, executor driver, partition 35, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 36.0 in stage 815.0 (TID 2870, localhost, executor driver, partition 36, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 37.0 in stage 815.0 (TID 2871, localhost, executor driver, partition 37, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 38.0 in stage 815.0 (TID 2872, localhost, executor driver, partition 38, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 39.0 in stage 815.0 (TID 2873, localhost, executor driver, partition 39, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 40.0 in stage 815.0 (TID 2874, localhost, executor driver, partition 40, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 41.0 in stage 815.0 (TID 2875, localhost, executor driver, partition 41, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 42.0 in stage 815.0 (TID 2876, localhost, executor driver, partition 42, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 43.0 in stage 815.0 (TID 2877, localhost, executor driver, partition 43, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 44.0 in stage 815.0 (TID 2878, localhost, executor driver, partition 44, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 45.0 in stage 815.0 (TID 2879, localhost, executor driver, partition 45, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 46.0 in stage 815.0 (TID 2880, localhost, executor driver, partition 46, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 47.0 in stage 815.0 (TID 2881, localhost, executor driver, partition 47, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 48.0 in stage 815.0 (TID 2882, localhost, executor driver, partition 48, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 49.0 in stage 815.0 (TID 2883, localhost, executor driver, partition 49, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 50.0 in stage 815.0 (TID 2884, localhost, executor driver, partition 50, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 51.0 in stage 815.0 (TID 2885, localhost, executor driver, partition 51, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 52.0 in stage 815.0 (TID 2886, localhost, executor driver, partition 52, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 53.0 in stage 815.0 (TID 2887, localhost, executor driver, partition 53, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 54.0 in stage 815.0 (TID 2888, localhost, executor driver, partition 54, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 55.0 in stage 815.0 (TID 2889, localhost, executor driver, partition 55, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 56.0 in stage 815.0 (TID 2890, localhost, executor driver, partition 56, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 57.0 in stage 815.0 (TID 2891, localhost, executor driver, partition 57, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 58.0 in stage 815.0 (TID 2892, localhost, executor driver, partition 58, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 59.0 in stage 815.0 (TID 2893, localhost, executor driver, partition 59, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 60.0 in stage 815.0 (TID 2894, localhost, executor driver, partition 60, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 61.0 in stage 815.0 (TID 2895, localhost, executor driver, partition 61, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 62.0 in stage 815.0 (TID 2896, localhost, executor driver, partition 62, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 63.0 in stage 815.0 (TID 2897, localhost, executor driver, partition 63, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 64.0 in stage 815.0 (TID 2898, localhost, executor driver, partition 64, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 65.0 in stage 815.0 (TID 2899, localhost, executor driver, partition 65, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 66.0 in stage 815.0 (TID 2900, localhost, executor driver, partition 66, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 67.0 in stage 815.0 (TID 2901, localhost, executor driver, partition 67, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 68.0 in stage 815.0 (TID 2902, localhost, executor driver, partition 68, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 69.0 in stage 815.0 (TID 2903, localhost, executor driver, partition 69, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 70.0 in stage 815.0 (TID 2904, localhost, executor driver, partition 70, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 71.0 in stage 815.0 (TID 2905, localhost, executor driver, partition 71, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 72.0 in stage 815.0 (TID 2906, localhost, executor driver, partition 72, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 73.0 in stage 815.0 (TID 2907, localhost, executor driver, partition 73, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 74.0 in stage 815.0 (TID 2908, localhost, executor driver, partition 74, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 75.0 in stage 815.0 (TID 2909, localhost, executor driver, partition 75, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 76.0 in stage 815.0 (TID 2910, localhost, executor driver, partition 76, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 77.0 in stage 815.0 (TID 2911, localhost, executor driver, partition 77, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 78.0 in stage 815.0 (TID 2912, localhost, executor driver, partition 78, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 79.0 in stage 815.0 (TID 2913, localhost, executor driver, partition 79, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 80.0 in stage 815.0 (TID 2914, localhost, executor driver, partition 80, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 81.0 in stage 815.0 (TID 2915, localhost, executor driver, partition 81, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 82.0 in stage 815.0 (TID 2916, localhost, executor driver, partition 82, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 83.0 in stage 815.0 (TID 2917, localhost, executor driver, partition 83, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 84.0 in stage 815.0 (TID 2918, localhost, executor driver, partition 84, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 85.0 in stage 815.0 (TID 2919, localhost, executor driver, partition 85, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 86.0 in stage 815.0 (TID 2920, localhost, executor driver, partition 86, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 87.0 in stage 815.0 (TID 2921, localhost, executor driver, partition 87, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 88.0 in stage 815.0 (TID 2922, localhost, executor driver, partition 88, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 89.0 in stage 815.0 (TID 2923, localhost, executor driver, partition 89, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 90.0 in stage 815.0 (TID 2924, localhost, executor driver, partition 90, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 91.0 in stage 815.0 (TID 2925, localhost, executor driver, partition 91, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 92.0 in stage 815.0 (TID 2926, localhost, executor driver, partition 92, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 93.0 in stage 815.0 (TID 2927, localhost, executor driver, partition 93, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 94.0 in stage 815.0 (TID 2928, localhost, executor driver, partition 94, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 95.0 in stage 815.0 (TID 2929, localhost, executor driver, partition 95, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO Executor: Running task 0.0 in stage 815.0 (TID 2834)
+20/11/03 16:19:25 INFO Executor: Running task 1.0 in stage 815.0 (TID 2835)
+20/11/03 16:19:25 INFO Executor: Running task 2.0 in stage 815.0 (TID 2836)
+20/11/03 16:19:25 INFO Executor: Running task 3.0 in stage 815.0 (TID 2837)
+20/11/03 16:19:25 INFO Executor: Running task 4.0 in stage 815.0 (TID 2838)
+20/11/03 16:19:25 INFO Executor: Running task 5.0 in stage 815.0 (TID 2839)
+20/11/03 16:19:25 INFO Executor: Running task 6.0 in stage 815.0 (TID 2840)
+20/11/03 16:19:25 INFO Executor: Running task 7.0 in stage 815.0 (TID 2841)
+20/11/03 16:19:25 INFO Executor: Running task 8.0 in stage 815.0 (TID 2842)
+20/11/03 16:19:25 INFO Executor: Running task 9.0 in stage 815.0 (TID 2843)
+20/11/03 16:19:25 INFO Executor: Running task 10.0 in stage 815.0 (TID 2844)
+20/11/03 16:19:25 INFO Executor: Running task 11.0 in stage 815.0 (TID 2845)
+20/11/03 16:19:25 INFO Executor: Running task 12.0 in stage 815.0 (TID 2846)
+20/11/03 16:19:25 INFO Executor: Running task 13.0 in stage 815.0 (TID 2847)
+20/11/03 16:19:25 INFO Executor: Running task 14.0 in stage 815.0 (TID 2848)
+20/11/03 16:19:25 INFO Executor: Running task 15.0 in stage 815.0 (TID 2849)
+20/11/03 16:19:25 INFO Executor: Running task 16.0 in stage 815.0 (TID 2850)
+20/11/03 16:19:25 INFO Executor: Running task 17.0 in stage 815.0 (TID 2851)
+20/11/03 16:19:25 INFO Executor: Running task 18.0 in stage 815.0 (TID 2852)
+20/11/03 16:19:25 INFO Executor: Running task 19.0 in stage 815.0 (TID 2853)
+20/11/03 16:19:25 INFO Executor: Running task 20.0 in stage 815.0 (TID 2854)
+20/11/03 16:19:25 INFO Executor: Running task 21.0 in stage 815.0 (TID 2855)
+20/11/03 16:19:25 INFO Executor: Running task 22.0 in stage 815.0 (TID 2856)
+20/11/03 16:19:25 INFO Executor: Running task 23.0 in stage 815.0 (TID 2857)
+20/11/03 16:19:25 INFO Executor: Running task 24.0 in stage 815.0 (TID 2858)
+20/11/03 16:19:25 INFO Executor: Running task 25.0 in stage 815.0 (TID 2859)
+20/11/03 16:19:25 INFO Executor: Running task 26.0 in stage 815.0 (TID 2860)
+20/11/03 16:19:25 INFO Executor: Running task 27.0 in stage 815.0 (TID 2861)
+20/11/03 16:19:25 INFO Executor: Running task 28.0 in stage 815.0 (TID 2862)
+20/11/03 16:19:25 INFO Executor: Running task 29.0 in stage 815.0 (TID 2863)
+20/11/03 16:19:25 INFO Executor: Running task 30.0 in stage 815.0 (TID 2864)
+20/11/03 16:19:25 INFO Executor: Running task 31.0 in stage 815.0 (TID 2865)
+20/11/03 16:19:25 INFO Executor: Running task 33.0 in stage 815.0 (TID 2867)
+20/11/03 16:19:25 INFO Executor: Running task 32.0 in stage 815.0 (TID 2866)
+20/11/03 16:19:25 INFO Executor: Running task 34.0 in stage 815.0 (TID 2868)
+20/11/03 16:19:25 INFO Executor: Running task 35.0 in stage 815.0 (TID 2869)
+20/11/03 16:19:25 INFO Executor: Finished task 5.0 in stage 815.0 (TID 2839). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 39.0 in stage 815.0 (TID 2873)
+20/11/03 16:19:25 INFO Executor: Running task 36.0 in stage 815.0 (TID 2870)
+20/11/03 16:19:25 INFO Executor: Running task 37.0 in stage 815.0 (TID 2871)
+20/11/03 16:19:25 INFO Executor: Finished task 31.0 in stage 815.0 (TID 2865). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 18.0 in stage 815.0 (TID 2852). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 29.0 in stage 815.0 (TID 2863). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 0.0 in stage 815.0 (TID 2834). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 42.0 in stage 815.0 (TID 2876)
+20/11/03 16:19:25 INFO Executor: Finished task 19.0 in stage 815.0 (TID 2853). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 38.0 in stage 815.0 (TID 2872)
+20/11/03 16:19:25 INFO Executor: Finished task 21.0 in stage 815.0 (TID 2855). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 25.0 in stage 815.0 (TID 2859). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 9.0 in stage 815.0 (TID 2843). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 20.0 in stage 815.0 (TID 2854). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 7.0 in stage 815.0 (TID 2841). 1876 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 6.0 in stage 815.0 (TID 2840). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 1.0 in stage 815.0 (TID 2835). 1876 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 4.0 in stage 815.0 (TID 2838). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 16.0 in stage 815.0 (TID 2850). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 12.0 in stage 815.0 (TID 2846). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 47.0 in stage 815.0 (TID 2881)
+20/11/03 16:19:25 INFO Executor: Running task 43.0 in stage 815.0 (TID 2877)
+20/11/03 16:19:25 INFO Executor: Running task 48.0 in stage 815.0 (TID 2882)
+20/11/03 16:19:25 INFO Executor: Finished task 13.0 in stage 815.0 (TID 2847). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 14.0 in stage 815.0 (TID 2848). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 8.0 in stage 815.0 (TID 2842). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 44.0 in stage 815.0 (TID 2878)
+20/11/03 16:19:25 INFO Executor: Running task 46.0 in stage 815.0 (TID 2880)
+20/11/03 16:19:25 INFO Executor: Running task 45.0 in stage 815.0 (TID 2879)
+20/11/03 16:19:25 INFO Executor: Finished task 3.0 in stage 815.0 (TID 2837). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 24.0 in stage 815.0 (TID 2858). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 15.0 in stage 815.0 (TID 2849). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 41.0 in stage 815.0 (TID 2875)
+20/11/03 16:19:25 INFO Executor: Finished task 10.0 in stage 815.0 (TID 2844). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 40.0 in stage 815.0 (TID 2874)
+20/11/03 16:19:25 INFO Executor: Running task 58.0 in stage 815.0 (TID 2892)
+20/11/03 16:19:25 INFO Executor: Running task 61.0 in stage 815.0 (TID 2895)
+20/11/03 16:19:25 INFO Executor: Running task 63.0 in stage 815.0 (TID 2897)
+20/11/03 16:19:25 INFO Executor: Running task 60.0 in stage 815.0 (TID 2894)
+20/11/03 16:19:25 INFO Executor: Finished task 28.0 in stage 815.0 (TID 2862). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 11.0 in stage 815.0 (TID 2845). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 2.0 in stage 815.0 (TID 2836). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 53.0 in stage 815.0 (TID 2887)
+20/11/03 16:19:25 INFO Executor: Running task 52.0 in stage 815.0 (TID 2886)
+20/11/03 16:19:25 INFO Executor: Running task 51.0 in stage 815.0 (TID 2885)
+20/11/03 16:19:25 INFO Executor: Running task 54.0 in stage 815.0 (TID 2888)
+20/11/03 16:19:25 INFO Executor: Running task 49.0 in stage 815.0 (TID 2883)
+20/11/03 16:19:25 INFO Executor: Running task 50.0 in stage 815.0 (TID 2884)
+20/11/03 16:19:25 INFO Executor: Finished task 35.0 in stage 815.0 (TID 2869). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 70.0 in stage 815.0 (TID 2904)
+20/11/03 16:19:25 INFO Executor: Running task 71.0 in stage 815.0 (TID 2905)
+20/11/03 16:19:25 INFO Executor: Running task 69.0 in stage 815.0 (TID 2903)
+20/11/03 16:19:25 INFO Executor: Finished task 34.0 in stage 815.0 (TID 2868). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 32.0 in stage 815.0 (TID 2866). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 55.0 in stage 815.0 (TID 2889)
+20/11/03 16:19:25 INFO Executor: Finished task 33.0 in stage 815.0 (TID 2867). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 64.0 in stage 815.0 (TID 2898)
+20/11/03 16:19:25 INFO Executor: Running task 77.0 in stage 815.0 (TID 2911)
+20/11/03 16:19:25 INFO Executor: Running task 67.0 in stage 815.0 (TID 2901)
+20/11/03 16:19:25 INFO Executor: Finished task 22.0 in stage 815.0 (TID 2856). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 65.0 in stage 815.0 (TID 2899)
+20/11/03 16:19:25 INFO Executor: Running task 66.0 in stage 815.0 (TID 2900)
+20/11/03 16:19:25 INFO Executor: Finished task 27.0 in stage 815.0 (TID 2861). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 62.0 in stage 815.0 (TID 2896)
+20/11/03 16:19:25 INFO Executor: Running task 56.0 in stage 815.0 (TID 2890)
+20/11/03 16:19:25 INFO Executor: Running task 57.0 in stage 815.0 (TID 2891)
+20/11/03 16:19:25 INFO Executor: Running task 59.0 in stage 815.0 (TID 2893)
+20/11/03 16:19:25 INFO Executor: Running task 79.0 in stage 815.0 (TID 2913)
+20/11/03 16:19:25 INFO Executor: Running task 74.0 in stage 815.0 (TID 2908)
+20/11/03 16:19:25 INFO Executor: Running task 75.0 in stage 815.0 (TID 2909)
+20/11/03 16:19:25 INFO Executor: Running task 76.0 in stage 815.0 (TID 2910)
+20/11/03 16:19:25 INFO Executor: Finished task 17.0 in stage 815.0 (TID 2851). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 68.0 in stage 815.0 (TID 2902)
+20/11/03 16:19:25 INFO Executor: Running task 72.0 in stage 815.0 (TID 2906)
+20/11/03 16:19:25 INFO Executor: Finished task 53.0 in stage 815.0 (TID 2887). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 30.0 in stage 815.0 (TID 2864). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 23.0 in stage 815.0 (TID 2857). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 26.0 in stage 815.0 (TID 2860). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 73.0 in stage 815.0 (TID 2907)
+20/11/03 16:19:25 INFO Executor: Finished task 47.0 in stage 815.0 (TID 2881). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 80.0 in stage 815.0 (TID 2914)
+20/11/03 16:19:25 INFO Executor: Running task 83.0 in stage 815.0 (TID 2917)
+20/11/03 16:19:25 INFO Executor: Running task 82.0 in stage 815.0 (TID 2916)
+20/11/03 16:19:25 INFO Executor: Running task 85.0 in stage 815.0 (TID 2919)
+20/11/03 16:19:25 INFO Executor: Running task 86.0 in stage 815.0 (TID 2920)
+20/11/03 16:19:25 INFO Executor: Running task 87.0 in stage 815.0 (TID 2921)
+20/11/03 16:19:25 INFO Executor: Finished task 36.0 in stage 815.0 (TID 2870). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 81.0 in stage 815.0 (TID 2915)
+20/11/03 16:19:25 INFO Executor: Running task 92.0 in stage 815.0 (TID 2926)
+20/11/03 16:19:25 INFO Executor: Finished task 61.0 in stage 815.0 (TID 2895). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 78.0 in stage 815.0 (TID 2912)
+20/11/03 16:19:25 INFO Executor: Finished task 39.0 in stage 815.0 (TID 2873). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 38.0 in stage 815.0 (TID 2872). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 58.0 in stage 815.0 (TID 2892). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 93.0 in stage 815.0 (TID 2927)
+20/11/03 16:19:25 INFO Executor: Finished task 46.0 in stage 815.0 (TID 2880). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 95.0 in stage 815.0 (TID 2929)
+20/11/03 16:19:25 INFO Executor: Running task 91.0 in stage 815.0 (TID 2925)
+20/11/03 16:19:25 INFO Executor: Finished task 44.0 in stage 815.0 (TID 2878). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 56.0 in stage 815.0 (TID 2890). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 89.0 in stage 815.0 (TID 2923)
+20/11/03 16:19:25 INFO Executor: Finished task 63.0 in stage 815.0 (TID 2897). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 43.0 in stage 815.0 (TID 2877). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 90.0 in stage 815.0 (TID 2924)
+20/11/03 16:19:25 INFO Executor: Finished task 50.0 in stage 815.0 (TID 2884). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 54.0 in stage 815.0 (TID 2888). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 49.0 in stage 815.0 (TID 2883). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 37.0 in stage 815.0 (TID 2871). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 60.0 in stage 815.0 (TID 2894). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 76.0 in stage 815.0 (TID 2910). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 70.0 in stage 815.0 (TID 2904). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 84.0 in stage 815.0 (TID 2918)
+20/11/03 16:19:25 INFO Executor: Finished task 42.0 in stage 815.0 (TID 2876). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 88.0 in stage 815.0 (TID 2922)
+20/11/03 16:19:25 INFO Executor: Finished task 66.0 in stage 815.0 (TID 2900). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 59.0 in stage 815.0 (TID 2893). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 74.0 in stage 815.0 (TID 2908). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 18.0 in stage 815.0 (TID 2852) in 76 ms on localhost (executor driver) (1/96)
+20/11/03 16:19:25 INFO Executor: Finished task 40.0 in stage 815.0 (TID 2874). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 81.0 in stage 815.0 (TID 2915). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 5.0 in stage 815.0 (TID 2839) in 84 ms on localhost (executor driver) (2/96)
+20/11/03 16:19:25 INFO Executor: Finished task 41.0 in stage 815.0 (TID 2875). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 94.0 in stage 815.0 (TID 2928)
+20/11/03 16:19:25 INFO Executor: Finished task 67.0 in stage 815.0 (TID 2901). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 45.0 in stage 815.0 (TID 2879). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 77.0 in stage 815.0 (TID 2911). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 29.0 in stage 815.0 (TID 2863) in 80 ms on localhost (executor driver) (3/96)
+20/11/03 16:19:25 INFO Executor: Finished task 55.0 in stage 815.0 (TID 2889). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 72.0 in stage 815.0 (TID 2906). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 79.0 in stage 815.0 (TID 2913). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 31.0 in stage 815.0 (TID 2865) in 81 ms on localhost (executor driver) (4/96)
+20/11/03 16:19:25 INFO Executor: Finished task 87.0 in stage 815.0 (TID 2921). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 64.0 in stage 815.0 (TID 2898). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 51.0 in stage 815.0 (TID 2885). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 0.0 in stage 815.0 (TID 2834) in 93 ms on localhost (executor driver) (5/96)
+20/11/03 16:19:25 INFO Executor: Finished task 52.0 in stage 815.0 (TID 2886). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 69.0 in stage 815.0 (TID 2903). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 71.0 in stage 815.0 (TID 2905). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 25.0 in stage 815.0 (TID 2859) in 84 ms on localhost (executor driver) (6/96)
+20/11/03 16:19:25 INFO Executor: Finished task 48.0 in stage 815.0 (TID 2882). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 21.0 in stage 815.0 (TID 2855) in 84 ms on localhost (executor driver) (7/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 20.0 in stage 815.0 (TID 2854) in 85 ms on localhost (executor driver) (8/96)
+20/11/03 16:19:25 INFO Executor: Finished task 84.0 in stage 815.0 (TID 2918). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 9.0 in stage 815.0 (TID 2843) in 87 ms on localhost (executor driver) (9/96)
+20/11/03 16:19:25 INFO Executor: Finished task 90.0 in stage 815.0 (TID 2924). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 19.0 in stage 815.0 (TID 2853) in 85 ms on localhost (executor driver) (10/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 12.0 in stage 815.0 (TID 2846) in 87 ms on localhost (executor driver) (11/96)
+20/11/03 16:19:25 INFO Executor: Finished task 89.0 in stage 815.0 (TID 2923). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 88.0 in stage 815.0 (TID 2922). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 16.0 in stage 815.0 (TID 2850) in 86 ms on localhost (executor driver) (12/96)
+20/11/03 16:19:25 INFO Executor: Finished task 95.0 in stage 815.0 (TID 2929). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 13.0 in stage 815.0 (TID 2847) in 87 ms on localhost (executor driver) (13/96)
+20/11/03 16:19:25 INFO Executor: Finished task 78.0 in stage 815.0 (TID 2912). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 1.0 in stage 815.0 (TID 2835) in 89 ms on localhost (executor driver) (14/96)
+20/11/03 16:19:25 INFO Executor: Finished task 92.0 in stage 815.0 (TID 2926). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 4.0 in stage 815.0 (TID 2838) in 89 ms on localhost (executor driver) (15/96)
+20/11/03 16:19:25 INFO Executor: Finished task 85.0 in stage 815.0 (TID 2919). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 91.0 in stage 815.0 (TID 2925). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 93.0 in stage 815.0 (TID 2927). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 82.0 in stage 815.0 (TID 2916). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 86.0 in stage 815.0 (TID 2920). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 80.0 in stage 815.0 (TID 2914). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 6.0 in stage 815.0 (TID 2840) in 90 ms on localhost (executor driver) (16/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 8.0 in stage 815.0 (TID 2842) in 89 ms on localhost (executor driver) (17/96)
+20/11/03 16:19:25 INFO Executor: Finished task 57.0 in stage 815.0 (TID 2891). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 83.0 in stage 815.0 (TID 2917). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 3.0 in stage 815.0 (TID 2837) in 90 ms on localhost (executor driver) (18/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 14.0 in stage 815.0 (TID 2848) in 89 ms on localhost (executor driver) (19/96)
+20/11/03 16:19:25 INFO Executor: Finished task 73.0 in stage 815.0 (TID 2907). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 15.0 in stage 815.0 (TID 2849) in 89 ms on localhost (executor driver) (20/96)
+20/11/03 16:19:25 INFO Executor: Finished task 68.0 in stage 815.0 (TID 2902). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 10.0 in stage 815.0 (TID 2844) in 90 ms on localhost (executor driver) (21/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 7.0 in stage 815.0 (TID 2841) in 90 ms on localhost (executor driver) (22/96)
+20/11/03 16:19:25 INFO Executor: Finished task 62.0 in stage 815.0 (TID 2896). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 11.0 in stage 815.0 (TID 2845) in 90 ms on localhost (executor driver) (23/96)
+20/11/03 16:19:25 INFO Executor: Finished task 75.0 in stage 815.0 (TID 2909). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 2.0 in stage 815.0 (TID 2836) in 91 ms on localhost (executor driver) (24/96)
+20/11/03 16:19:25 INFO Executor: Finished task 65.0 in stage 815.0 (TID 2899). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 24.0 in stage 815.0 (TID 2858) in 88 ms on localhost (executor driver) (25/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 34.0 in stage 815.0 (TID 2868) in 87 ms on localhost (executor driver) (26/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 32.0 in stage 815.0 (TID 2866) in 87 ms on localhost (executor driver) (27/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 28.0 in stage 815.0 (TID 2862) in 88 ms on localhost (executor driver) (28/96)
+20/11/03 16:19:25 INFO Executor: Finished task 94.0 in stage 815.0 (TID 2928). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 35.0 in stage 815.0 (TID 2869) in 88 ms on localhost (executor driver) (29/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 22.0 in stage 815.0 (TID 2856) in 89 ms on localhost (executor driver) (30/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 33.0 in stage 815.0 (TID 2867) in 88 ms on localhost (executor driver) (31/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 27.0 in stage 815.0 (TID 2861) in 90 ms on localhost (executor driver) (32/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 53.0 in stage 815.0 (TID 2887) in 87 ms on localhost (executor driver) (33/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 30.0 in stage 815.0 (TID 2864) in 89 ms on localhost (executor driver) (34/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 17.0 in stage 815.0 (TID 2851) in 91 ms on localhost (executor driver) (35/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 23.0 in stage 815.0 (TID 2857) in 90 ms on localhost (executor driver) (36/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 26.0 in stage 815.0 (TID 2860) in 91 ms on localhost (executor driver) (37/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 47.0 in stage 815.0 (TID 2881) in 89 ms on localhost (executor driver) (38/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 36.0 in stage 815.0 (TID 2870) in 90 ms on localhost (executor driver) (39/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 58.0 in stage 815.0 (TID 2892) in 87 ms on localhost (executor driver) (40/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 38.0 in stage 815.0 (TID 2872) in 91 ms on localhost (executor driver) (41/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 61.0 in stage 815.0 (TID 2895) in 88 ms on localhost (executor driver) (42/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 39.0 in stage 815.0 (TID 2873) in 91 ms on localhost (executor driver) (43/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 46.0 in stage 815.0 (TID 2880) in 90 ms on localhost (executor driver) (44/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 44.0 in stage 815.0 (TID 2878) in 90 ms on localhost (executor driver) (45/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 56.0 in stage 815.0 (TID 2890) in 89 ms on localhost (executor driver) (46/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 63.0 in stage 815.0 (TID 2897) in 88 ms on localhost (executor driver) (47/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 50.0 in stage 815.0 (TID 2884) in 89 ms on localhost (executor driver) (48/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 43.0 in stage 815.0 (TID 2877) in 91 ms on localhost (executor driver) (49/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 49.0 in stage 815.0 (TID 2883) in 91 ms on localhost (executor driver) (50/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 76.0 in stage 815.0 (TID 2910) in 87 ms on localhost (executor driver) (51/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 37.0 in stage 815.0 (TID 2871) in 92 ms on localhost (executor driver) (52/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 54.0 in stage 815.0 (TID 2888) in 90 ms on localhost (executor driver) (53/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 60.0 in stage 815.0 (TID 2894) in 89 ms on localhost (executor driver) (54/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 70.0 in stage 815.0 (TID 2904) in 89 ms on localhost (executor driver) (55/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 66.0 in stage 815.0 (TID 2900) in 89 ms on localhost (executor driver) (56/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 42.0 in stage 815.0 (TID 2876) in 92 ms on localhost (executor driver) (57/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 74.0 in stage 815.0 (TID 2908) in 88 ms on localhost (executor driver) (58/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 59.0 in stage 815.0 (TID 2893) in 90 ms on localhost (executor driver) (59/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 40.0 in stage 815.0 (TID 2874) in 94 ms on localhost (executor driver) (60/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 81.0 in stage 815.0 (TID 2915) in 89 ms on localhost (executor driver) (61/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 41.0 in stage 815.0 (TID 2875) in 93 ms on localhost (executor driver) (62/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 67.0 in stage 815.0 (TID 2901) in 90 ms on localhost (executor driver) (63/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 45.0 in stage 815.0 (TID 2879) in 93 ms on localhost (executor driver) (64/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 77.0 in stage 815.0 (TID 2911) in 90 ms on localhost (executor driver) (65/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 55.0 in stage 815.0 (TID 2889) in 93 ms on localhost (executor driver) (66/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 79.0 in stage 815.0 (TID 2913) in 90 ms on localhost (executor driver) (67/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 64.0 in stage 815.0 (TID 2898) in 91 ms on localhost (executor driver) (68/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 72.0 in stage 815.0 (TID 2906) in 91 ms on localhost (executor driver) (69/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 52.0 in stage 815.0 (TID 2886) in 93 ms on localhost (executor driver) (70/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 51.0 in stage 815.0 (TID 2885) in 93 ms on localhost (executor driver) (71/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 87.0 in stage 815.0 (TID 2921) in 89 ms on localhost (executor driver) (72/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 69.0 in stage 815.0 (TID 2903) in 94 ms on localhost (executor driver) (73/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 84.0 in stage 815.0 (TID 2918) in 93 ms on localhost (executor driver) (74/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 71.0 in stage 815.0 (TID 2905) in 95 ms on localhost (executor driver) (75/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 48.0 in stage 815.0 (TID 2882) in 98 ms on localhost (executor driver) (76/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 90.0 in stage 815.0 (TID 2924) in 96 ms on localhost (executor driver) (77/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 89.0 in stage 815.0 (TID 2923) in 96 ms on localhost (executor driver) (78/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 95.0 in stage 815.0 (TID 2929) in 96 ms on localhost (executor driver) (79/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 88.0 in stage 815.0 (TID 2922) in 97 ms on localhost (executor driver) (80/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 78.0 in stage 815.0 (TID 2912) in 98 ms on localhost (executor driver) (81/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 92.0 in stage 815.0 (TID 2926) in 96 ms on localhost (executor driver) (82/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 93.0 in stage 815.0 (TID 2927) in 96 ms on localhost (executor driver) (83/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 91.0 in stage 815.0 (TID 2925) in 96 ms on localhost (executor driver) (84/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 86.0 in stage 815.0 (TID 2920) in 97 ms on localhost (executor driver) (85/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 85.0 in stage 815.0 (TID 2919) in 97 ms on localhost (executor driver) (86/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 82.0 in stage 815.0 (TID 2916) in 97 ms on localhost (executor driver) (87/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 80.0 in stage 815.0 (TID 2914) in 99 ms on localhost (executor driver) (88/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 57.0 in stage 815.0 (TID 2891) in 101 ms on localhost (executor driver) (89/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 68.0 in stage 815.0 (TID 2902) in 100 ms on localhost (executor driver) (90/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 83.0 in stage 815.0 (TID 2917) in 98 ms on localhost (executor driver) (91/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 73.0 in stage 815.0 (TID 2907) in 99 ms on localhost (executor driver) (92/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 62.0 in stage 815.0 (TID 2896) in 101 ms on localhost (executor driver) (93/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 75.0 in stage 815.0 (TID 2909) in 100 ms on localhost (executor driver) (94/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 65.0 in stage 815.0 (TID 2899) in 101 ms on localhost (executor driver) (95/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 94.0 in stage 815.0 (TID 2928) in 98 ms on localhost (executor driver) (96/96)
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Removed TaskSet 815.0, whose tasks have all completed, from pool 
+20/11/03 16:19:25 INFO DAGScheduler: ShuffleMapStage 815 (count at utils.scala:114) finished in 0.134 s
+20/11/03 16:19:25 INFO DAGScheduler: looking for newly runnable stages
+20/11/03 16:19:25 INFO DAGScheduler: running: Set()
+20/11/03 16:19:25 INFO DAGScheduler: waiting: Set(ResultStage 816)
+20/11/03 16:19:25 INFO DAGScheduler: failed: Set()
+20/11/03 16:19:25 INFO DAGScheduler: Submitting ResultStage 816 (MapPartitionsRDD[2910] at count at utils.scala:114), which has no missing parents
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1091 stored as values in memory (estimated size 10.1 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1091_piece0 stored as bytes in memory (estimated size 5.0 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO BlockManagerInfo: Added broadcast_1091_piece0 in memory on localhost:39669 (size: 5.0 KiB, free: 963.0 MiB)
+20/11/03 16:19:25 INFO SparkContext: Created broadcast 1091 from broadcast at DAGScheduler.scala:1200
+20/11/03 16:19:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 816 (MapPartitionsRDD[2910] at count at utils.scala:114) (first 15 tasks are for partitions Vector(0))
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Adding task set 816.0 with 1 tasks
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 0.0 in stage 816.0 (TID 2930, localhost, executor driver, partition 0, NODE_LOCAL, 7325 bytes)
+20/11/03 16:19:25 INFO Executor: Running task 0.0 in stage 816.0 (TID 2930)
+20/11/03 16:19:25 INFO ShuffleBlockFetcherIterator: Getting 96 (5.6 KiB) non-empty blocks including 96 (5.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+20/11/03 16:19:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+20/11/03 16:19:25 INFO Executor: Finished task 0.0 in stage 816.0 (TID 2930). 2648 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 0.0 in stage 816.0 (TID 2930) in 12 ms on localhost (executor driver) (1/1)
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Removed TaskSet 816.0, whose tasks have all completed, from pool 
+20/11/03 16:19:25 INFO DAGScheduler: ResultStage 816 (count at utils.scala:114) finished in 0.018 s
+20/11/03 16:19:25 INFO DAGScheduler: Job 578 is finished. Cancelling potential speculative or zombie tasks for this job
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 816: Stage finished
+20/11/03 16:19:25 INFO DAGScheduler: Job 578 finished: count at utils.scala:114, took 0.155895 s
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_database: default
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_database: default	
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_database: default
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_database: default	
+20/11/03 16:19:25 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+20/11/03 16:19:25 INFO audit: ugi=z1863700	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+20/11/03 16:19:25 INFO SparkContext: Starting job: count at utils.scala:114
+20/11/03 16:19:25 INFO DAGScheduler: Registering RDD 2913 (count at utils.scala:114) as input to shuffle 209
+20/11/03 16:19:25 INFO DAGScheduler: Got job 579 (count at utils.scala:114) with 1 output partitions
+20/11/03 16:19:25 INFO DAGScheduler: Final stage: ResultStage 818 (count at utils.scala:114)
+20/11/03 16:19:25 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 817)
+20/11/03 16:19:25 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 817)
+20/11/03 16:19:25 INFO DAGScheduler: Submitting ShuffleMapStage 817 (MapPartitionsRDD[2913] at count at utils.scala:114), which has no missing parents
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1092 stored as values in memory (estimated size 10.1 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1092_piece0 stored as bytes in memory (estimated size 5.2 KiB, free 962.4 MiB)
+20/11/03 16:19:25 INFO BlockManagerInfo: Added broadcast_1092_piece0 in memory on localhost:39669 (size: 5.2 KiB, free: 963.0 MiB)
+20/11/03 16:19:25 INFO SparkContext: Created broadcast 1092 from broadcast at DAGScheduler.scala:1200
+20/11/03 16:19:25 INFO DAGScheduler: Submitting 96 missing tasks from ShuffleMapStage 817 (MapPartitionsRDD[2913] at count at utils.scala:114) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Adding task set 817.0 with 96 tasks
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 0.0 in stage 817.0 (TID 2931, localhost, executor driver, partition 0, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 1.0 in stage 817.0 (TID 2932, localhost, executor driver, partition 1, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 2.0 in stage 817.0 (TID 2933, localhost, executor driver, partition 2, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 3.0 in stage 817.0 (TID 2934, localhost, executor driver, partition 3, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 4.0 in stage 817.0 (TID 2935, localhost, executor driver, partition 4, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 5.0 in stage 817.0 (TID 2936, localhost, executor driver, partition 5, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 6.0 in stage 817.0 (TID 2937, localhost, executor driver, partition 6, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 7.0 in stage 817.0 (TID 2938, localhost, executor driver, partition 7, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 8.0 in stage 817.0 (TID 2939, localhost, executor driver, partition 8, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 9.0 in stage 817.0 (TID 2940, localhost, executor driver, partition 9, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 10.0 in stage 817.0 (TID 2941, localhost, executor driver, partition 10, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 11.0 in stage 817.0 (TID 2942, localhost, executor driver, partition 11, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 12.0 in stage 817.0 (TID 2943, localhost, executor driver, partition 12, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 13.0 in stage 817.0 (TID 2944, localhost, executor driver, partition 13, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 14.0 in stage 817.0 (TID 2945, localhost, executor driver, partition 14, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 15.0 in stage 817.0 (TID 2946, localhost, executor driver, partition 15, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 16.0 in stage 817.0 (TID 2947, localhost, executor driver, partition 16, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 17.0 in stage 817.0 (TID 2948, localhost, executor driver, partition 17, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 18.0 in stage 817.0 (TID 2949, localhost, executor driver, partition 18, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 19.0 in stage 817.0 (TID 2950, localhost, executor driver, partition 19, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 20.0 in stage 817.0 (TID 2951, localhost, executor driver, partition 20, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 21.0 in stage 817.0 (TID 2952, localhost, executor driver, partition 21, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 22.0 in stage 817.0 (TID 2953, localhost, executor driver, partition 22, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 23.0 in stage 817.0 (TID 2954, localhost, executor driver, partition 23, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 24.0 in stage 817.0 (TID 2955, localhost, executor driver, partition 24, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 25.0 in stage 817.0 (TID 2956, localhost, executor driver, partition 25, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 26.0 in stage 817.0 (TID 2957, localhost, executor driver, partition 26, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 27.0 in stage 817.0 (TID 2958, localhost, executor driver, partition 27, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 28.0 in stage 817.0 (TID 2959, localhost, executor driver, partition 28, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 29.0 in stage 817.0 (TID 2960, localhost, executor driver, partition 29, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 30.0 in stage 817.0 (TID 2961, localhost, executor driver, partition 30, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 31.0 in stage 817.0 (TID 2962, localhost, executor driver, partition 31, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 32.0 in stage 817.0 (TID 2963, localhost, executor driver, partition 32, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 33.0 in stage 817.0 (TID 2964, localhost, executor driver, partition 33, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 34.0 in stage 817.0 (TID 2965, localhost, executor driver, partition 34, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 35.0 in stage 817.0 (TID 2966, localhost, executor driver, partition 35, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 36.0 in stage 817.0 (TID 2967, localhost, executor driver, partition 36, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 37.0 in stage 817.0 (TID 2968, localhost, executor driver, partition 37, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 38.0 in stage 817.0 (TID 2969, localhost, executor driver, partition 38, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 39.0 in stage 817.0 (TID 2970, localhost, executor driver, partition 39, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 40.0 in stage 817.0 (TID 2971, localhost, executor driver, partition 40, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 41.0 in stage 817.0 (TID 2972, localhost, executor driver, partition 41, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 42.0 in stage 817.0 (TID 2973, localhost, executor driver, partition 42, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 43.0 in stage 817.0 (TID 2974, localhost, executor driver, partition 43, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 44.0 in stage 817.0 (TID 2975, localhost, executor driver, partition 44, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 45.0 in stage 817.0 (TID 2976, localhost, executor driver, partition 45, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 46.0 in stage 817.0 (TID 2977, localhost, executor driver, partition 46, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 47.0 in stage 817.0 (TID 2978, localhost, executor driver, partition 47, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 48.0 in stage 817.0 (TID 2979, localhost, executor driver, partition 48, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 49.0 in stage 817.0 (TID 2980, localhost, executor driver, partition 49, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 50.0 in stage 817.0 (TID 2981, localhost, executor driver, partition 50, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 51.0 in stage 817.0 (TID 2982, localhost, executor driver, partition 51, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 52.0 in stage 817.0 (TID 2983, localhost, executor driver, partition 52, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 53.0 in stage 817.0 (TID 2984, localhost, executor driver, partition 53, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 54.0 in stage 817.0 (TID 2985, localhost, executor driver, partition 54, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 55.0 in stage 817.0 (TID 2986, localhost, executor driver, partition 55, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 56.0 in stage 817.0 (TID 2987, localhost, executor driver, partition 56, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 57.0 in stage 817.0 (TID 2988, localhost, executor driver, partition 57, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 58.0 in stage 817.0 (TID 2989, localhost, executor driver, partition 58, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 59.0 in stage 817.0 (TID 2990, localhost, executor driver, partition 59, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 60.0 in stage 817.0 (TID 2991, localhost, executor driver, partition 60, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 61.0 in stage 817.0 (TID 2992, localhost, executor driver, partition 61, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 62.0 in stage 817.0 (TID 2993, localhost, executor driver, partition 62, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 63.0 in stage 817.0 (TID 2994, localhost, executor driver, partition 63, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 64.0 in stage 817.0 (TID 2995, localhost, executor driver, partition 64, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 65.0 in stage 817.0 (TID 2996, localhost, executor driver, partition 65, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 66.0 in stage 817.0 (TID 2997, localhost, executor driver, partition 66, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 67.0 in stage 817.0 (TID 2998, localhost, executor driver, partition 67, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 68.0 in stage 817.0 (TID 2999, localhost, executor driver, partition 68, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 69.0 in stage 817.0 (TID 3000, localhost, executor driver, partition 69, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 70.0 in stage 817.0 (TID 3001, localhost, executor driver, partition 70, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 71.0 in stage 817.0 (TID 3002, localhost, executor driver, partition 71, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 72.0 in stage 817.0 (TID 3003, localhost, executor driver, partition 72, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 73.0 in stage 817.0 (TID 3004, localhost, executor driver, partition 73, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 74.0 in stage 817.0 (TID 3005, localhost, executor driver, partition 74, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 75.0 in stage 817.0 (TID 3006, localhost, executor driver, partition 75, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 76.0 in stage 817.0 (TID 3007, localhost, executor driver, partition 76, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 77.0 in stage 817.0 (TID 3008, localhost, executor driver, partition 77, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 78.0 in stage 817.0 (TID 3009, localhost, executor driver, partition 78, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 79.0 in stage 817.0 (TID 3010, localhost, executor driver, partition 79, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 80.0 in stage 817.0 (TID 3011, localhost, executor driver, partition 80, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 81.0 in stage 817.0 (TID 3012, localhost, executor driver, partition 81, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 82.0 in stage 817.0 (TID 3013, localhost, executor driver, partition 82, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 83.0 in stage 817.0 (TID 3014, localhost, executor driver, partition 83, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 84.0 in stage 817.0 (TID 3015, localhost, executor driver, partition 84, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 85.0 in stage 817.0 (TID 3016, localhost, executor driver, partition 85, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 86.0 in stage 817.0 (TID 3017, localhost, executor driver, partition 86, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 87.0 in stage 817.0 (TID 3018, localhost, executor driver, partition 87, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 88.0 in stage 817.0 (TID 3019, localhost, executor driver, partition 88, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 89.0 in stage 817.0 (TID 3020, localhost, executor driver, partition 89, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 90.0 in stage 817.0 (TID 3021, localhost, executor driver, partition 90, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 91.0 in stage 817.0 (TID 3022, localhost, executor driver, partition 91, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 92.0 in stage 817.0 (TID 3023, localhost, executor driver, partition 92, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 93.0 in stage 817.0 (TID 3024, localhost, executor driver, partition 93, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 94.0 in stage 817.0 (TID 3025, localhost, executor driver, partition 94, PROCESS_LOCAL, 7498 bytes)
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 95.0 in stage 817.0 (TID 3026, localhost, executor driver, partition 95, PROCESS_LOCAL, 7515 bytes)
+20/11/03 16:19:25 INFO Executor: Running task 0.0 in stage 817.0 (TID 2931)
+20/11/03 16:19:25 INFO Executor: Running task 4.0 in stage 817.0 (TID 2935)
+20/11/03 16:19:25 INFO Executor: Running task 14.0 in stage 817.0 (TID 2945)
+20/11/03 16:19:25 INFO Executor: Running task 17.0 in stage 817.0 (TID 2948)
+20/11/03 16:19:25 INFO Executor: Running task 2.0 in stage 817.0 (TID 2933)
+20/11/03 16:19:25 INFO Executor: Running task 21.0 in stage 817.0 (TID 2952)
+20/11/03 16:19:25 INFO Executor: Running task 30.0 in stage 817.0 (TID 2961)
+20/11/03 16:19:25 INFO Executor: Running task 34.0 in stage 817.0 (TID 2965)
+20/11/03 16:19:25 INFO Executor: Running task 3.0 in stage 817.0 (TID 2934)
+20/11/03 16:19:25 INFO Executor: Running task 38.0 in stage 817.0 (TID 2969)
+20/11/03 16:19:25 INFO Executor: Running task 37.0 in stage 817.0 (TID 2968)
+20/11/03 16:19:25 INFO Executor: Running task 39.0 in stage 817.0 (TID 2970)
+20/11/03 16:19:25 INFO Executor: Running task 40.0 in stage 817.0 (TID 2971)
+20/11/03 16:19:25 INFO Executor: Running task 47.0 in stage 817.0 (TID 2978)
+20/11/03 16:19:25 INFO Executor: Running task 48.0 in stage 817.0 (TID 2979)
+20/11/03 16:19:25 INFO Executor: Running task 1.0 in stage 817.0 (TID 2932)
+20/11/03 16:19:25 INFO Executor: Running task 53.0 in stage 817.0 (TID 2984)
+20/11/03 16:19:25 INFO Executor: Running task 50.0 in stage 817.0 (TID 2981)
+20/11/03 16:19:25 INFO Executor: Running task 46.0 in stage 817.0 (TID 2977)
+20/11/03 16:19:25 INFO Executor: Running task 56.0 in stage 817.0 (TID 2987)
+20/11/03 16:19:25 INFO Executor: Running task 49.0 in stage 817.0 (TID 2980)
+20/11/03 16:19:25 INFO Executor: Running task 57.0 in stage 817.0 (TID 2988)
+20/11/03 16:19:25 INFO Executor: Running task 44.0 in stage 817.0 (TID 2975)
+20/11/03 16:19:25 INFO Executor: Running task 45.0 in stage 817.0 (TID 2976)
+20/11/03 16:19:25 INFO Executor: Running task 43.0 in stage 817.0 (TID 2974)
+20/11/03 16:19:25 INFO Executor: Running task 42.0 in stage 817.0 (TID 2973)
+20/11/03 16:19:25 INFO Executor: Running task 41.0 in stage 817.0 (TID 2972)
+20/11/03 16:19:25 INFO Executor: Running task 35.0 in stage 817.0 (TID 2966)
+20/11/03 16:19:25 INFO Executor: Running task 36.0 in stage 817.0 (TID 2967)
+20/11/03 16:19:25 INFO Executor: Running task 33.0 in stage 817.0 (TID 2964)
+20/11/03 16:19:25 INFO Executor: Running task 58.0 in stage 817.0 (TID 2989)
+20/11/03 16:19:25 INFO Executor: Running task 32.0 in stage 817.0 (TID 2963)
+20/11/03 16:19:25 INFO Executor: Running task 31.0 in stage 817.0 (TID 2962)
+20/11/03 16:19:25 INFO Executor: Running task 26.0 in stage 817.0 (TID 2957)
+20/11/03 16:19:25 INFO Executor: Running task 29.0 in stage 817.0 (TID 2960)
+20/11/03 16:19:25 INFO Executor: Running task 27.0 in stage 817.0 (TID 2958)
+20/11/03 16:19:25 INFO Executor: Running task 28.0 in stage 817.0 (TID 2959)
+20/11/03 16:19:25 INFO Executor: Running task 25.0 in stage 817.0 (TID 2956)
+20/11/03 16:19:25 INFO Executor: Running task 22.0 in stage 817.0 (TID 2953)
+20/11/03 16:19:25 INFO Executor: Running task 16.0 in stage 817.0 (TID 2947)
+20/11/03 16:19:25 INFO Executor: Running task 24.0 in stage 817.0 (TID 2955)
+20/11/03 16:19:25 INFO Executor: Running task 23.0 in stage 817.0 (TID 2954)
+20/11/03 16:19:25 INFO Executor: Running task 15.0 in stage 817.0 (TID 2946)
+20/11/03 16:19:25 INFO Executor: Running task 18.0 in stage 817.0 (TID 2949)
+20/11/03 16:19:25 INFO Executor: Running task 19.0 in stage 817.0 (TID 2950)
+20/11/03 16:19:25 INFO Executor: Running task 20.0 in stage 817.0 (TID 2951)
+20/11/03 16:19:25 INFO Executor: Running task 9.0 in stage 817.0 (TID 2940)
+20/11/03 16:19:25 INFO Executor: Running task 13.0 in stage 817.0 (TID 2944)
+20/11/03 16:19:25 INFO Executor: Running task 12.0 in stage 817.0 (TID 2943)
+20/11/03 16:19:25 INFO Executor: Running task 11.0 in stage 817.0 (TID 2942)
+20/11/03 16:19:25 INFO Executor: Running task 5.0 in stage 817.0 (TID 2936)
+20/11/03 16:19:25 INFO Executor: Running task 7.0 in stage 817.0 (TID 2938)
+20/11/03 16:19:25 INFO Executor: Running task 10.0 in stage 817.0 (TID 2941)
+20/11/03 16:19:25 INFO Executor: Running task 8.0 in stage 817.0 (TID 2939)
+20/11/03 16:19:25 INFO Executor: Running task 6.0 in stage 817.0 (TID 2937)
+20/11/03 16:19:25 INFO Executor: Finished task 17.0 in stage 817.0 (TID 2948). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 3.0 in stage 817.0 (TID 2934). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 59.0 in stage 817.0 (TID 2990)
+20/11/03 16:19:25 INFO Executor: Finished task 2.0 in stage 817.0 (TID 2933). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 60.0 in stage 817.0 (TID 2991)
+20/11/03 16:19:25 INFO Executor: Finished task 40.0 in stage 817.0 (TID 2971). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 51.0 in stage 817.0 (TID 2982)
+20/11/03 16:19:25 INFO Executor: Running task 55.0 in stage 817.0 (TID 2986)
+20/11/03 16:19:25 INFO Executor: Running task 54.0 in stage 817.0 (TID 2985)
+20/11/03 16:19:25 INFO Executor: Running task 52.0 in stage 817.0 (TID 2983)
+20/11/03 16:19:25 INFO Executor: Finished task 21.0 in stage 817.0 (TID 2952). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 66.0 in stage 817.0 (TID 2997)
+20/11/03 16:19:25 INFO Executor: Running task 65.0 in stage 817.0 (TID 2996)
+20/11/03 16:19:25 INFO Executor: Running task 64.0 in stage 817.0 (TID 2995)
+20/11/03 16:19:25 INFO Executor: Finished task 0.0 in stage 817.0 (TID 2931). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 63.0 in stage 817.0 (TID 2994)
+20/11/03 16:19:25 INFO Executor: Finished task 30.0 in stage 817.0 (TID 2961). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 68.0 in stage 817.0 (TID 2999)
+20/11/03 16:19:25 INFO Executor: Finished task 39.0 in stage 817.0 (TID 2970). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 61.0 in stage 817.0 (TID 2992)
+20/11/03 16:19:25 INFO Executor: Finished task 47.0 in stage 817.0 (TID 2978). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 69.0 in stage 817.0 (TID 3000)
+20/11/03 16:19:25 INFO Executor: Running task 71.0 in stage 817.0 (TID 3002)
+20/11/03 16:19:25 INFO Executor: Finished task 34.0 in stage 817.0 (TID 2965). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 62.0 in stage 817.0 (TID 2993)
+20/11/03 16:19:25 INFO Executor: Running task 70.0 in stage 817.0 (TID 3001)
+20/11/03 16:19:25 INFO Executor: Running task 72.0 in stage 817.0 (TID 3003)
+20/11/03 16:19:25 INFO Executor: Finished task 1.0 in stage 817.0 (TID 2932). 1876 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 67.0 in stage 817.0 (TID 2998)
+20/11/03 16:19:25 INFO Executor: Running task 75.0 in stage 817.0 (TID 3006)
+20/11/03 16:19:25 INFO Executor: Running task 74.0 in stage 817.0 (TID 3005)
+20/11/03 16:19:25 INFO Executor: Finished task 46.0 in stage 817.0 (TID 2977). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 48.0 in stage 817.0 (TID 2979). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 4.0 in stage 817.0 (TID 2935). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 78.0 in stage 817.0 (TID 3009)
+20/11/03 16:19:25 INFO Executor: Running task 80.0 in stage 817.0 (TID 3011)
+20/11/03 16:19:25 INFO Executor: Running task 77.0 in stage 817.0 (TID 3008)
+20/11/03 16:19:25 INFO Executor: Running task 76.0 in stage 817.0 (TID 3007)
+20/11/03 16:19:25 INFO Executor: Finished task 14.0 in stage 817.0 (TID 2945). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 81.0 in stage 817.0 (TID 3012)
+20/11/03 16:19:25 INFO Executor: Running task 79.0 in stage 817.0 (TID 3010)
+20/11/03 16:19:25 INFO Executor: Finished task 38.0 in stage 817.0 (TID 2969). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 73.0 in stage 817.0 (TID 3004)
+20/11/03 16:19:25 INFO Executor: Finished task 19.0 in stage 817.0 (TID 2950). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 37.0 in stage 817.0 (TID 2968). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 82.0 in stage 817.0 (TID 3013)
+20/11/03 16:19:25 INFO Executor: Finished task 15.0 in stage 817.0 (TID 2946). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 84.0 in stage 817.0 (TID 3015)
+20/11/03 16:19:25 INFO Executor: Finished task 35.0 in stage 817.0 (TID 2966). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 85.0 in stage 817.0 (TID 3016)
+20/11/03 16:19:25 INFO Executor: Running task 86.0 in stage 817.0 (TID 3017)
+20/11/03 16:19:25 INFO Executor: Finished task 50.0 in stage 817.0 (TID 2981). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 83.0 in stage 817.0 (TID 3014)
+20/11/03 16:19:25 INFO Executor: Finished task 57.0 in stage 817.0 (TID 2988). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 53.0 in stage 817.0 (TID 2984). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 89.0 in stage 817.0 (TID 3020)
+20/11/03 16:19:25 INFO Executor: Running task 88.0 in stage 817.0 (TID 3019)
+20/11/03 16:19:25 INFO Executor: Running task 90.0 in stage 817.0 (TID 3021)
+20/11/03 16:19:25 INFO Executor: Finished task 56.0 in stage 817.0 (TID 2987). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 91.0 in stage 817.0 (TID 3022)
+20/11/03 16:19:25 INFO Executor: Running task 93.0 in stage 817.0 (TID 3024)
+20/11/03 16:19:25 INFO Executor: Finished task 58.0 in stage 817.0 (TID 2989). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 94.0 in stage 817.0 (TID 3025)
+20/11/03 16:19:25 INFO Executor: Running task 87.0 in stage 817.0 (TID 3018)
+20/11/03 16:19:25 INFO Executor: Finished task 41.0 in stage 817.0 (TID 2972). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 59.0 in stage 817.0 (TID 2990). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 92.0 in stage 817.0 (TID 3023)
+20/11/03 16:19:25 INFO Executor: Finished task 12.0 in stage 817.0 (TID 2943). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 18.0 in stage 817.0 (TID 2949). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Running task 95.0 in stage 817.0 (TID 3026)
+20/11/03 16:19:25 INFO Executor: Finished task 51.0 in stage 817.0 (TID 2982). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 13.0 in stage 817.0 (TID 2944). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 3.0 in stage 817.0 (TID 2934) in 79 ms on localhost (executor driver) (1/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 17.0 in stage 817.0 (TID 2948) in 79 ms on localhost (executor driver) (2/96)
+20/11/03 16:19:25 INFO Executor: Finished task 43.0 in stage 817.0 (TID 2974). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 33.0 in stage 817.0 (TID 2964). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 2.0 in stage 817.0 (TID 2933) in 81 ms on localhost (executor driver) (3/96)
+20/11/03 16:19:25 INFO Executor: Finished task 22.0 in stage 817.0 (TID 2953). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 24.0 in stage 817.0 (TID 2955). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 40.0 in stage 817.0 (TID 2971) in 78 ms on localhost (executor driver) (4/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 0.0 in stage 817.0 (TID 2931) in 86 ms on localhost (executor driver) (5/96)
+20/11/03 16:19:25 INFO Executor: Finished task 32.0 in stage 817.0 (TID 2963). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 23.0 in stage 817.0 (TID 2954). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 20.0 in stage 817.0 (TID 2951). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 10.0 in stage 817.0 (TID 2941). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 30.0 in stage 817.0 (TID 2961) in 85 ms on localhost (executor driver) (6/96)
+20/11/03 16:19:25 INFO Executor: Finished task 31.0 in stage 817.0 (TID 2962). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 90.0 in stage 817.0 (TID 3021). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 39.0 in stage 817.0 (TID 2970) in 85 ms on localhost (executor driver) (7/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 47.0 in stage 817.0 (TID 2978) in 85 ms on localhost (executor driver) (8/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 21.0 in stage 817.0 (TID 2952) in 87 ms on localhost (executor driver) (9/96)
+20/11/03 16:19:25 INFO Executor: Finished task 16.0 in stage 817.0 (TID 2947). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 46.0 in stage 817.0 (TID 2977) in 85 ms on localhost (executor driver) (10/96)
+20/11/03 16:19:25 INFO Executor: Finished task 44.0 in stage 817.0 (TID 2975). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 34.0 in stage 817.0 (TID 2965) in 86 ms on localhost (executor driver) (11/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 1.0 in stage 817.0 (TID 2932) in 89 ms on localhost (executor driver) (12/96)
+20/11/03 16:19:25 INFO Executor: Finished task 26.0 in stage 817.0 (TID 2957). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 48.0 in stage 817.0 (TID 2979) in 85 ms on localhost (executor driver) (13/96)
+20/11/03 16:19:25 INFO Executor: Finished task 8.0 in stage 817.0 (TID 2939). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 38.0 in stage 817.0 (TID 2969) in 86 ms on localhost (executor driver) (14/96)
+20/11/03 16:19:25 INFO Executor: Finished task 9.0 in stage 817.0 (TID 2940). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 4.0 in stage 817.0 (TID 2935) in 90 ms on localhost (executor driver) (15/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 14.0 in stage 817.0 (TID 2945) in 89 ms on localhost (executor driver) (16/96)
+20/11/03 16:19:25 INFO Executor: Finished task 29.0 in stage 817.0 (TID 2960). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 19.0 in stage 817.0 (TID 2950) in 88 ms on localhost (executor driver) (17/96)
+20/11/03 16:19:25 INFO Executor: Finished task 36.0 in stage 817.0 (TID 2967). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 27.0 in stage 817.0 (TID 2958). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 15.0 in stage 817.0 (TID 2946) in 90 ms on localhost (executor driver) (18/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 37.0 in stage 817.0 (TID 2968) in 88 ms on localhost (executor driver) (19/96)
+20/11/03 16:19:25 INFO Executor: Finished task 42.0 in stage 817.0 (TID 2973). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 28.0 in stage 817.0 (TID 2959). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 35.0 in stage 817.0 (TID 2966) in 88 ms on localhost (executor driver) (20/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 50.0 in stage 817.0 (TID 2981) in 86 ms on localhost (executor driver) (21/96)
+20/11/03 16:19:25 INFO Executor: Finished task 45.0 in stage 817.0 (TID 2976). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 57.0 in stage 817.0 (TID 2988) in 86 ms on localhost (executor driver) (22/96)
+20/11/03 16:19:25 INFO Executor: Finished task 11.0 in stage 817.0 (TID 2942). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 53.0 in stage 817.0 (TID 2984) in 87 ms on localhost (executor driver) (23/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 59.0 in stage 817.0 (TID 2990) in 86 ms on localhost (executor driver) (24/96)
+20/11/03 16:19:25 INFO Executor: Finished task 49.0 in stage 817.0 (TID 2980). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 58.0 in stage 817.0 (TID 2989) in 86 ms on localhost (executor driver) (25/96)
+20/11/03 16:19:25 INFO Executor: Finished task 95.0 in stage 817.0 (TID 3026). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 94.0 in stage 817.0 (TID 3025). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 82.0 in stage 817.0 (TID 3013). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 41.0 in stage 817.0 (TID 2972) in 88 ms on localhost (executor driver) (26/96)
+20/11/03 16:19:25 INFO Executor: Finished task 92.0 in stage 817.0 (TID 3023). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 93.0 in stage 817.0 (TID 3024). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 87.0 in stage 817.0 (TID 3018). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 18.0 in stage 817.0 (TID 2949) in 92 ms on localhost (executor driver) (27/96)
+20/11/03 16:19:25 INFO Executor: Finished task 88.0 in stage 817.0 (TID 3019). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 12.0 in stage 817.0 (TID 2943) in 92 ms on localhost (executor driver) (28/96)
+20/11/03 16:19:25 INFO Executor: Finished task 85.0 in stage 817.0 (TID 3016). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 56.0 in stage 817.0 (TID 2987) in 89 ms on localhost (executor driver) (29/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 13.0 in stage 817.0 (TID 2944) in 93 ms on localhost (executor driver) (30/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 51.0 in stage 817.0 (TID 2982) in 89 ms on localhost (executor driver) (31/96)
+20/11/03 16:19:25 INFO Executor: Finished task 89.0 in stage 817.0 (TID 3020). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 43.0 in stage 817.0 (TID 2974) in 90 ms on localhost (executor driver) (32/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 33.0 in stage 817.0 (TID 2964) in 91 ms on localhost (executor driver) (33/96)
+20/11/03 16:19:25 INFO Executor: Finished task 91.0 in stage 817.0 (TID 3022). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 23.0 in stage 817.0 (TID 2954) in 92 ms on localhost (executor driver) (34/96)
+20/11/03 16:19:25 INFO Executor: Finished task 79.0 in stage 817.0 (TID 3010). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 32.0 in stage 817.0 (TID 2963) in 91 ms on localhost (executor driver) (35/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 20.0 in stage 817.0 (TID 2951) in 92 ms on localhost (executor driver) (36/96)
+20/11/03 16:19:25 INFO Executor: Finished task 86.0 in stage 817.0 (TID 3017). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 22.0 in stage 817.0 (TID 2953) in 93 ms on localhost (executor driver) (37/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 24.0 in stage 817.0 (TID 2955) in 93 ms on localhost (executor driver) (38/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 10.0 in stage 817.0 (TID 2941) in 94 ms on localhost (executor driver) (39/96)
+20/11/03 16:19:25 INFO Executor: Finished task 83.0 in stage 817.0 (TID 3014). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 84.0 in stage 817.0 (TID 3015). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 62.0 in stage 817.0 (TID 2993). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 31.0 in stage 817.0 (TID 2962) in 92 ms on localhost (executor driver) (40/96)
+20/11/03 16:19:25 INFO Executor: Finished task 73.0 in stage 817.0 (TID 3004). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 16.0 in stage 817.0 (TID 2947) in 94 ms on localhost (executor driver) (41/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 26.0 in stage 817.0 (TID 2957) in 93 ms on localhost (executor driver) (42/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 44.0 in stage 817.0 (TID 2975) in 92 ms on localhost (executor driver) (43/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 90.0 in stage 817.0 (TID 3021) in 87 ms on localhost (executor driver) (44/96)
+20/11/03 16:19:25 INFO Executor: Finished task 74.0 in stage 817.0 (TID 3005). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 81.0 in stage 817.0 (TID 3012). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 76.0 in stage 817.0 (TID 3007). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 8.0 in stage 817.0 (TID 2939) in 96 ms on localhost (executor driver) (45/96)
+20/11/03 16:19:25 INFO Executor: Finished task 67.0 in stage 817.0 (TID 2998). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 29.0 in stage 817.0 (TID 2960) in 93 ms on localhost (executor driver) (46/96)
+20/11/03 16:19:25 INFO Executor: Finished task 77.0 in stage 817.0 (TID 3008). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 42.0 in stage 817.0 (TID 2973) in 93 ms on localhost (executor driver) (47/96)
+20/11/03 16:19:25 INFO Executor: Finished task 70.0 in stage 817.0 (TID 3001). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 36.0 in stage 817.0 (TID 2967) in 94 ms on localhost (executor driver) (48/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 9.0 in stage 817.0 (TID 2940) in 97 ms on localhost (executor driver) (49/96)
+20/11/03 16:19:25 INFO Executor: Finished task 72.0 in stage 817.0 (TID 3003). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 27.0 in stage 817.0 (TID 2958) in 95 ms on localhost (executor driver) (50/96)
+20/11/03 16:19:25 INFO Executor: Finished task 75.0 in stage 817.0 (TID 3006). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 45.0 in stage 817.0 (TID 2976) in 93 ms on localhost (executor driver) (51/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 28.0 in stage 817.0 (TID 2959) in 94 ms on localhost (executor driver) (52/96)
+20/11/03 16:19:25 INFO Executor: Finished task 80.0 in stage 817.0 (TID 3011). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 49.0 in stage 817.0 (TID 2980) in 92 ms on localhost (executor driver) (53/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 11.0 in stage 817.0 (TID 2942) in 97 ms on localhost (executor driver) (54/96)
+20/11/03 16:19:25 INFO Executor: Finished task 63.0 in stage 817.0 (TID 2994). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 78.0 in stage 817.0 (TID 3009). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 68.0 in stage 817.0 (TID 2999). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 95.0 in stage 817.0 (TID 3026) in 88 ms on localhost (executor driver) (55/96)
+20/11/03 16:19:25 INFO Executor: Finished task 71.0 in stage 817.0 (TID 3002). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 65.0 in stage 817.0 (TID 2996). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 64.0 in stage 817.0 (TID 2995). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 55.0 in stage 817.0 (TID 2986). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 61.0 in stage 817.0 (TID 2992). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 69.0 in stage 817.0 (TID 3000). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 66.0 in stage 817.0 (TID 2997). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 92.0 in stage 817.0 (TID 3023) in 91 ms on localhost (executor driver) (56/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 93.0 in stage 817.0 (TID 3024) in 91 ms on localhost (executor driver) (57/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 94.0 in stage 817.0 (TID 3025) in 90 ms on localhost (executor driver) (58/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 87.0 in stage 817.0 (TID 3018) in 91 ms on localhost (executor driver) (59/96)
+20/11/03 16:19:25 INFO Executor: Finished task 60.0 in stage 817.0 (TID 2991). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 82.0 in stage 817.0 (TID 3013) in 92 ms on localhost (executor driver) (60/96)
+20/11/03 16:19:25 INFO Executor: Finished task 6.0 in stage 817.0 (TID 2937). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 89.0 in stage 817.0 (TID 3020) in 91 ms on localhost (executor driver) (61/96)
+20/11/03 16:19:25 INFO Executor: Finished task 52.0 in stage 817.0 (TID 2983). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO Executor: Finished task 7.0 in stage 817.0 (TID 2938). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 88.0 in stage 817.0 (TID 3019) in 91 ms on localhost (executor driver) (62/96)
+20/11/03 16:19:25 INFO Executor: Finished task 54.0 in stage 817.0 (TID 2985). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 86.0 in stage 817.0 (TID 3017) in 92 ms on localhost (executor driver) (63/96)
+20/11/03 16:19:25 INFO Executor: Finished task 5.0 in stage 817.0 (TID 2936). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 91.0 in stage 817.0 (TID 3022) in 92 ms on localhost (executor driver) (64/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 85.0 in stage 817.0 (TID 3016) in 92 ms on localhost (executor driver) (65/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 79.0 in stage 817.0 (TID 3010) in 93 ms on localhost (executor driver) (66/96)
+20/11/03 16:19:25 INFO Executor: Finished task 25.0 in stage 817.0 (TID 2956). 1833 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 84.0 in stage 817.0 (TID 3015) in 92 ms on localhost (executor driver) (67/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 73.0 in stage 817.0 (TID 3004) in 94 ms on localhost (executor driver) (68/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 83.0 in stage 817.0 (TID 3014) in 93 ms on localhost (executor driver) (69/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 81.0 in stage 817.0 (TID 3012) in 93 ms on localhost (executor driver) (70/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 74.0 in stage 817.0 (TID 3005) in 95 ms on localhost (executor driver) (71/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 62.0 in stage 817.0 (TID 2993) in 96 ms on localhost (executor driver) (72/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 76.0 in stage 817.0 (TID 3007) in 95 ms on localhost (executor driver) (73/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 67.0 in stage 817.0 (TID 2998) in 96 ms on localhost (executor driver) (74/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 70.0 in stage 817.0 (TID 3001) in 95 ms on localhost (executor driver) (75/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 77.0 in stage 817.0 (TID 3008) in 95 ms on localhost (executor driver) (76/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 80.0 in stage 817.0 (TID 3011) in 94 ms on localhost (executor driver) (77/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 72.0 in stage 817.0 (TID 3003) in 96 ms on localhost (executor driver) (78/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 75.0 in stage 817.0 (TID 3006) in 96 ms on localhost (executor driver) (79/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 63.0 in stage 817.0 (TID 2994) in 97 ms on localhost (executor driver) (80/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 71.0 in stage 817.0 (TID 3002) in 96 ms on localhost (executor driver) (81/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 68.0 in stage 817.0 (TID 2999) in 96 ms on localhost (executor driver) (82/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 64.0 in stage 817.0 (TID 2995) in 97 ms on localhost (executor driver) (83/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 55.0 in stage 817.0 (TID 2986) in 98 ms on localhost (executor driver) (84/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 65.0 in stage 817.0 (TID 2996) in 97 ms on localhost (executor driver) (85/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 61.0 in stage 817.0 (TID 2992) in 97 ms on localhost (executor driver) (86/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 78.0 in stage 817.0 (TID 3009) in 95 ms on localhost (executor driver) (87/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 60.0 in stage 817.0 (TID 2991) in 97 ms on localhost (executor driver) (88/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 69.0 in stage 817.0 (TID 3000) in 96 ms on localhost (executor driver) (89/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 66.0 in stage 817.0 (TID 2997) in 98 ms on localhost (executor driver) (90/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 52.0 in stage 817.0 (TID 2983) in 99 ms on localhost (executor driver) (91/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 6.0 in stage 817.0 (TID 2937) in 104 ms on localhost (executor driver) (92/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 7.0 in stage 817.0 (TID 2938) in 104 ms on localhost (executor driver) (93/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 54.0 in stage 817.0 (TID 2985) in 99 ms on localhost (executor driver) (94/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 25.0 in stage 817.0 (TID 2956) in 102 ms on localhost (executor driver) (95/96)
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 5.0 in stage 817.0 (TID 2936) in 104 ms on localhost (executor driver) (96/96)
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Removed TaskSet 817.0, whose tasks have all completed, from pool 
+20/11/03 16:19:25 INFO DAGScheduler: ShuffleMapStage 817 (count at utils.scala:114) finished in 0.111 s
+20/11/03 16:19:25 INFO DAGScheduler: looking for newly runnable stages
+20/11/03 16:19:25 INFO DAGScheduler: running: Set()
+20/11/03 16:19:25 INFO DAGScheduler: waiting: Set(ResultStage 818)
+20/11/03 16:19:25 INFO DAGScheduler: failed: Set()
+20/11/03 16:19:25 INFO DAGScheduler: Submitting ResultStage 818 (MapPartitionsRDD[2916] at count at utils.scala:114), which has no missing parents
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1093 stored as values in memory (estimated size 10.1 KiB, free 962.3 MiB)
+20/11/03 16:19:25 INFO MemoryStore: Block broadcast_1093_piece0 stored as bytes in memory (estimated size 5.0 KiB, free 962.3 MiB)
+20/11/03 16:19:25 INFO BlockManagerInfo: Added broadcast_1093_piece0 in memory on localhost:39669 (size: 5.0 KiB, free: 963.0 MiB)
+20/11/03 16:19:25 INFO SparkContext: Created broadcast 1093 from broadcast at DAGScheduler.scala:1200
+20/11/03 16:19:25 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 818 (MapPartitionsRDD[2916] at count at utils.scala:114) (first 15 tasks are for partitions Vector(0))
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Adding task set 818.0 with 1 tasks
+20/11/03 16:19:25 INFO TaskSetManager: Starting task 0.0 in stage 818.0 (TID 3027, localhost, executor driver, partition 0, NODE_LOCAL, 7325 bytes)
+20/11/03 16:19:25 INFO Executor: Running task 0.0 in stage 818.0 (TID 3027)
+20/11/03 16:19:25 INFO ShuffleBlockFetcherIterator: Getting 96 (5.6 KiB) non-empty blocks including 96 (5.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+20/11/03 16:19:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+20/11/03 16:19:25 INFO Executor: Finished task 0.0 in stage 818.0 (TID 3027). 2648 bytes result sent to driver
+20/11/03 16:19:25 INFO TaskSetManager: Finished task 0.0 in stage 818.0 (TID 3027) in 9 ms on localhost (executor driver) (1/1)
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Removed TaskSet 818.0, whose tasks have all completed, from pool 
+20/11/03 16:19:25 INFO DAGScheduler: ResultStage 818 (count at utils.scala:114) finished in 0.015 s
+20/11/03 16:19:25 INFO DAGScheduler: Job 579 is finished. Cancelling potential speculative or zombie tasks for this job
+20/11/03 16:19:25 INFO TaskSchedulerImpl: Killing all running tasks in stage 818: Stage finished
+20/11/03 16:19:25 INFO DAGScheduler: Job 579 finished: count at utils.scala:114, took 0.128836 s
